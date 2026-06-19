@@ -217,7 +217,7 @@ export const pricingPlans = [
 export const team = [
   {
     name: "David Clarke FCA",
-    image: "/images/profile-1.png",
+    image: "/images/Profile-1.png",
     role: "Managing Partner",
     bio: "20 years advising SMEs across London and the South East. Specialises in tax planning for growing businesses.",
     initials: "DC",
@@ -231,7 +231,7 @@ export const team = [
   },
   {
     name: "Michael Torres",
-    image: "/images/profile-2.png",
+    image: "/images/Profile-2.png",
     role: "Payroll & Compliance",
     bio: "Ensures every client meets HMRC and Companies House deadlines — payroll, pensions, and statutory filings.",
     initials: "MT",
