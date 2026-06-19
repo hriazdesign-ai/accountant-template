@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { IconArrowRight, IconCheck, IconMail, IconPhone } from "@/components/icons";
@@ -195,8 +196,13 @@ export default function HeroSection({
                   Speak with a qualified accountant — no obligation, no hard sell.
                 </p>
                 <div className="mt-4 flex items-center gap-3 border-t border-primary/10 pt-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-semibold text-white">
-                    DC
+                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full">
+                    <Image
+                      src="/images/Profile-1.png"
+                      alt="David Clarke FCA"
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-text">David Clarke FCA</p>
