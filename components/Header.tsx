@@ -21,7 +21,7 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -40,7 +40,7 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="hidden items-center gap-4 lg:flex">
           <a
             href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
             className="text-sm font-medium text-text-muted transition-colors hover:text-primary"
@@ -57,7 +57,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-[4px] p-2 text-primary md:hidden"
+          className="inline-flex items-center justify-center rounded-[4px] p-2 text-primary lg:hidden"
           aria-expanded={mobileOpen}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -76,7 +76,7 @@ export default function Header() {
 
       {mobileOpen && (
         <nav
-          className="border-t border-primary/10 bg-section-white px-4 py-4 md:hidden"
+          className="border-t border-primary/10 bg-section-white px-4 py-4 lg:hidden"
           aria-label="Mobile navigation"
         >
           <ul className="flex flex-col gap-1">

@@ -104,9 +104,9 @@ export default function HeroSection({
   primaryCta = { label: "Book a free consultation", href: "/contact" },
   secondaryCta = { label: "View our services", href: "/services" },
   highlights = [
-    "Fixed monthly fees",
-    "Dedicated accountant",
-    "Cloud accounting included",
+    "Flexible learning plans",
+    "Experienced tutors",
+    "Clear progress updates",
   ],
   image = defaultHeroImage,
   showConsultationCard = true,
@@ -125,7 +125,7 @@ export default function HeroSection({
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_5%_85%,_rgba(30,58,95,0.07)_0%,_transparent_45%)]" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-primary/10" />
 
-      <div className={`relative mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 ${paddingClass}`}>
+      <div className={`relative mx-auto grid max-w-6xl items-center gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 ${paddingClass}`}>
         <div>
           <span className="mb-4 block h-1 w-10 rounded-none bg-accent-text" />
           <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-accent-text">
@@ -175,42 +175,47 @@ export default function HeroSection({
         )}
 
         {!showContactCard && image && (
-          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <ImagePlaceholder
-              src={image.src}
-              alt={image.alt}
-              label={image.label}
-              aspectRatio="hero"
-              priority
-            />
+          <div className="relative -mx-4 pb-12 sm:-mx-6 sm:pb-14 lg:mx-0 lg:pb-0">
+            <div className="relative mx-4 sm:mx-6 lg:mx-0">
+              <ImagePlaceholder
+                src={image.src}
+                alt={image.alt}
+                label={image.label}
+                aspectRatio="hero"
+                priority
+                className="!aspect-auto h-[440px] sm:h-[520px] lg:!aspect-[4/5] lg:h-auto"
+              />
 
-            {showConsultationCard && (
-              <div className="mt-5 rounded-[8px] border border-primary/12 bg-section-white p-5 shadow-lg shadow-primary/8 ring-1 ring-primary/8 sm:p-6 lg:absolute lg:bottom-5 lg:left-5 lg:right-5 lg:mt-0 lg:bg-section-white/95 lg:backdrop-blur-sm">
-                <p className="text-xs font-semibold uppercase tracking-widest text-accent-text">
-                  Next available
-                </p>
-                <p className="mt-2 font-serif text-xl font-medium text-primary">
-                Free Learning Assessment
-                </p>
-                <p className="mt-2 text-sm text-text-muted">
-                Book a free learning assessment and explore how we can support academic success.
-                </p>
-                <div className="mt-4 flex items-center gap-3 border-t border-primary/10 pt-4">
-                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full">
-                    <Image
-                      src="/images/profile-sarah.png"
-                      alt="Sarah Ahmed"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-text">Sarah Ahmed</p>
-                    <p className="text-xs text-text-muted">Lead Learning Advisor</p>
+              {showConsultationCard && (
+                <div className="absolute inset-x-6 bottom-6 translate-y-[66px] lg:inset-x-0 lg:bottom-5 lg:translate-y-0">
+                  <div className="rounded-[8px] border border-primary/12 bg-section-white p-5 shadow-lg shadow-primary/8 ring-1 ring-primary/8 sm:p-6 lg:mx-5 lg:bg-section-white/95 lg:backdrop-blur-sm">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-accent-text">
+                      Next available
+                    </p>
+                    <p className="mt-2 font-serif text-xl font-medium text-primary">
+                      Free Learning Assessment
+                    </p>
+                    <p className="mt-2 text-sm text-text-muted">
+                      Book a free learning assessment and explore how we can support academic success.
+                    </p>
+                    <div className="mt-4 flex items-center gap-3 border-t border-primary/10 pt-4">
+                      <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full">
+                        <Image
+                          src="/images/profile-sarah.png"
+                          alt="Sarah Ahmed"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-text">Sarah Ahmed</p>
+                        <p className="text-xs text-text-muted">Lead Learning Advisor</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         )}
       </div>
