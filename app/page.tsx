@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <>
       <HeroSection
-        title="Accounting that gives you clarity, not complexity"
-        description="We help sole traders, small businesses, and limited companies stay compliant, save tax, and make confident financial decisions — with a dedicated accountant by your side."
+        title="Helping Students Build Confidence & Achieve Their Potential"
+        description="Personalised tutoring and educational support for primary, secondary and college students. We help learners strengthen skills, improve results and enjoy learning."
       />
       <StatsSection />
       <SoftwareLogosSection />

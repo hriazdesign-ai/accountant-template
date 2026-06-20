@@ -24,8 +24,8 @@ export default function AudienceSection({
         <div className="mx-auto mb-12 flex max-w-2xl flex-col items-center text-center sm:mb-16 lg:mb-20">
           <SectionHeading
             eyebrow="Who We Help"
-            title="Accounting built for how you work"
-            description="Whether you're a one-person operation or a growing limited company, we adapt our services to your stage and sector."
+            title="Support tailored to every learner"
+            description="Whether your child is building confidence in primary school or preparing for important exams, we tailor support to their goals."
           />
         </div>
 

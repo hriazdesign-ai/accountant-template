@@ -14,7 +14,7 @@ export default function WhyChooseUsSection({ tone = "mint" }: WhyChooseUsSection
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div>
           <ImagePlaceholder
-            src="/images/account-desk.jpg"
+            src="/images/treaching-2.jpg"
             alt="Modern architectural office building and financial workspace"
             label="Modern business environment"
             aspectRatio="banner"
@@ -25,18 +25,18 @@ export default function WhyChooseUsSection({ tone = "mint" }: WhyChooseUsSection
           <div className="flex h-full flex-col">
             <SectionHeading
               eyebrow="Why Choose Us"
-              title="More than number-crunching"
-              description="We combine chartered expertise with a personal, proactive approach — so you spend less time on admin and more time on what matters."
+              title="Building confidence as well as results"
+              description="We combine experienced tutors with a personal, supportive approach — so every student feels seen, encouraged and ready to improve."
               align="left"
             />
 
             <div className="mt-10 flex flex-1 flex-col rounded-[8px] border border-primary/15 bg-primary p-6 shadow-lg shadow-primary/15 sm:mt-12 sm:p-8 lg:h-full">
               <div className="mb-4 h-1 w-10 rounded-none bg-accent-on-dark" />
               <p className="font-serif text-2xl font-medium leading-snug text-white">
-                &ldquo;Our clients stay because we treat their business like our own.&rdquo;
+                &ldquo;Our daughter gained confidence, improved her grades and now actually enjoys learning.&rdquo;
               </p>
               <p className="mt-4 text-sm text-white/90">
-                — David Clarke FCA, Managing Partner
+                — Parent of GCSE Student
               </p>
             </div>
           </div>

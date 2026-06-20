@@ -24,13 +24,13 @@ type HeroSectionProps = {
 };
 
 const defaultHeroImage: HeroImage = {
-  src: "/images/hero-home.jpg",
+  src: "/images/teaching-1.jpg",
   alt: "Professional accountant reviewing financial documents with a client",
   label: "Your dedicated accountant",
 };
 
 const contactCardHighlights = [
-  "Free 30-minute consultation",
+  "Free Learning Assessment",
   "No obligation",
   "Response within 1 business day",
 ];
@@ -42,7 +42,7 @@ function ContactInfoCard() {
         Get in touch
       </p>
       <p className="mt-2 font-serif text-2xl font-medium text-primary">
-        Free 30-minute consultation
+        Free Learning Assessment
       </p>
       <p className="mt-2 text-sm text-text-muted">
         Speak with a qualified accountant about your business — no obligation, no hard sell.
@@ -98,7 +98,7 @@ function ContactInfoCard() {
 }
 
 export default function HeroSection({
-  eyebrow = "Chartered Accountants",
+  eyebrow = "TRUSTED EDUCATION SUPPORT",
   title,
   description,
   primaryCta = { label: "Book a free consultation", href: "/contact" },
@@ -190,23 +190,23 @@ export default function HeroSection({
                   Next available
                 </p>
                 <p className="mt-2 font-serif text-xl font-medium text-primary">
-                  Free 30-minute consultation
+                Free Learning Assessment
                 </p>
                 <p className="mt-2 text-sm text-text-muted">
-                  Speak with a qualified accountant — no obligation, no hard sell.
+                Book a free learning assessment and explore how we can support academic success.
                 </p>
                 <div className="mt-4 flex items-center gap-3 border-t border-primary/10 pt-4">
                   <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full">
                     <Image
-                      src="/images/Profile-1.png"
-                      alt="David Clarke FCA"
+                      src="/images/profile-sarah.png"
+                      alt="Sarah Ahmed"
                       fill
                       className="object-cover"
                     />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-text">David Clarke FCA</p>
-                    <p className="text-xs text-text-muted">Managing Partner</p>
+                    <p className="text-sm font-semibold text-text">Sarah Ahmed</p>
+                    <p className="text-xs text-text-muted">Lead Learning Advisor</p>
                   </div>
                 </div>
               </div>

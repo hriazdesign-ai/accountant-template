@@ -28,8 +28,8 @@ export default function TestimonialsSection({ tone = "white" }: TestimonialsSect
         <div className="mx-auto mb-10 flex max-w-2xl flex-col items-center text-center sm:mb-12">
           <SectionHeading
             eyebrow="Testimonials"
-            title="Trusted by businesses across the UK"
-            description="Don't just take our word for it — hear from sole traders, founders, and directors who've made the switch."
+            title="Trusted by parents and students"
+            description="Hear from parents and students who have experienced the difference personalised support can make."
           />
         </div>
 
@@ -41,7 +41,7 @@ export default function TestimonialsSection({ tone = "white" }: TestimonialsSect
             <StarRating size="lg" />
           </div>
           <p className="mt-5 font-serif text-3xl font-medium tracking-tight text-primary sm:text-4xl">
-            Rated 4.9/5 by UK Businesses
+          Rated 4.9/5 by Parents & Students
           </p>
           <p className="mt-3 text-sm text-text-muted">
             Based on 120+ verified Google reviews

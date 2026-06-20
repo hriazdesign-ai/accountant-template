@@ -8,8 +8,8 @@ type CTASectionProps = {
 };
 
 export default function CTASection({
-  title = "Ready to simplify your accounts?",
-  description = "Book a free 30-minute consultation with a qualified accountant. We'll review your setup, answer your questions, and recommend the right package — with no obligation.",
+  title = "Ready to unlock your child's potential?",
+  description = "Book a free learning assessment and discover how personalised support can help build confidence, improve grades and develop lifelong learning skills.",
 }: CTASectionProps) {
   return (
     <section className="relative overflow-hidden bg-primary py-20 sm:py-28">

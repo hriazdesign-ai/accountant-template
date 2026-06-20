@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: "Meridian & Co.",
-  tagline: "Chartered Accountants",
+  name: "Bright Path Learning",
+  tagline: "Primary • GCSE • A-Level",
   phone: "020 7946 0958",
-  email: "hello@meridianco.co.uk",
-  address: "42 Threadneedle Street, London EC2R 8AY",
-  hours: "Mon–Fri, 9:00am – 5:30pm",
+  email: "hello@brightpathlearning.co.uk",
+  address: "London, United Kingdom",
+  hours: "Mon–Sat, 9:00am – 7:00pm",
 };
 
 export const navLinks = [
@@ -16,125 +16,126 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { value: "15+", label: "Years of experience" },
-  { value: "850+", label: "Clients supported" },
-  { value: "98%", label: "Client retention rate" },
-  { value: "£2.4M", label: "Tax saved last year" },
+  { value: "500+", label: "Students supported" },
+  { value: "12+", label: "Subjects covered" },
+  { value: "95%", label: "Parent satisfaction" },
+  { value: "1:1", label: "Personalised support" },
 ];
 
 export const services = [
   {
-    title: "Self Assessment",
+    title: "1-to-1 Tutoring",
     description:
-      "Accurate tax returns for sole traders and freelancers, submitted on time with every allowable expense claimed.",
+      "Personalised support tailored to each student’s ability, learning style, and academic goals.",
     icon: "document",
   },
   {
-    title: "Bookkeeping",
+    title: "GCSE Preparation",
     description:
-      "Clean, up-to-date records using cloud accounting software so you always know where your business stands.",
+      "Structured revision and exam support to help students build confidence before GCSE assessments.",
     icon: "ledger",
   },
   {
-    title: "Payroll",
+    title: "A-Level Support",
     description:
-      "Compliant payroll processing, RTI submissions, and pension auto-enrolment handled without the admin burden.",
+      "Subject-focused tuition for students who need deeper support with higher-level study.",
     icon: "payroll",
   },
   {
-    title: "VAT Returns",
+    title: "Homework Help",
     description:
-      "Quarterly VAT preparation and filing, with proactive advice on schemes that reduce your liability.",
+      "Ongoing support to reinforce classroom learning and help students stay on track.",
     icon: "vat",
   },
   {
-    title: "Year-End Accounts",
+    title: "Online Learning",
     description:
-      "Statutory accounts prepared to Companies House standards, with clear reporting for directors and shareholders.",
+      "Flexible remote lessons designed to fit around school, family life, and busy schedules.",
     icon: "accounts",
   },
   {
-    title: "Tax Planning",
+    title: "Study Skills",
     description:
-      "Forward-looking strategies to minimise tax legally — from dividend planning to R&D relief and capital allowances.",
+      "Helping students improve focus, revision habits, confidence, and independent learning.",
     icon: "planning",
   },
 ];
 
 export const audiences = [
   {
-    title: "Sole Traders",
+    title: "Primary Students",
     description:
-      "From your first self-assessment to scaling your freelance income, we keep your tax simple and your records compliant.",
-    highlights: ["Self-assessment", "Expense tracking", "HMRC correspondence"],
+      "Building strong foundations in literacy, numeracy and confidence from an early age.",
+    highlights: ["Reading", "Writing", "Mathematics"],
   },
   {
-    title: "Small Businesses",
+    title: "Secondary Students",
     description:
-      "Whether you're a shop, agency, or consultancy, we handle the numbers so you can focus on growth.",
-    highlights: ["Monthly bookkeeping", "Cash flow insights", "VAT & payroll"],
+      "Supporting students through key stages, coursework and exam preparation.",
+    highlights: ["GCSE Support", "Homework Help", "Revision Skills"],
   },
   {
-    title: "Limited Companies",
+    title: "College Students",
     description:
-      "Full company accounting, confirmation statements, and director support — structured for compliance and clarity.",
-    highlights: ["Year-end accounts", "Corporation tax", "Director payroll"],
+      "Focused subject support and guidance for A-Level and advanced study.",
+    highlights: ["A-Level Tuition", "Exam Preparation", "Study Skills"],
   },
 ];
 
 export const whyChooseUs = [
   {
-    title: "Dedicated accountant",
+    title: "Qualified Tutors",
     description:
-      "You'll work with the same qualified accountant every time — no call centres, no rotating teams.",
+      "Experienced educators who understand how students learn and develop confidence.",
   },
   {
-    title: "Fixed, transparent fees",
+    title: "Personalised Learning",
     description:
-      "Clear monthly pricing with no surprise bills. You know exactly what you're paying before we start.",
+      "Every lesson is tailored to individual strengths, challenges and goals.",
   },
   {
-    title: "Proactive advice",
+    title: "Flexible Delivery",
     description:
-      "We don't just file your returns. We flag opportunities, deadlines, and risks before they become problems.",
+      "Choose from online or in-person learning to fit around family life.",
   },
   {
-    title: "Cloud-first approach",
+    title: "Proven Results",
     description:
-      "Real-time access to your figures via Xero, QuickBooks, or FreeAgent — wherever you are.",
+      "Helping students improve grades, confidence and independent learning skills.",
   },
 ];
 
 export const testimonials = [
   {
     quote:
-      "Meridian & Co. transformed how I manage my freelance finances. My tax return used to stress me out every January — now it's handled before I even think about it.",
-    name: "Sarah Mitchell",
-    role: "Graphic Designer, Sole Trader",
-    initials: "SM",
+      "My daughter went from a Grade 4 to a Grade 7 in Maths within six months. More importantly, she gained confidence and now enjoys the subject.",
+    name: "Sarah Williams",
+    role: "Parent of GCSE Student",
+    initials: "SW",
   },
   {
     quote:
-      "We switched from a large firm and immediately noticed the difference. Our accountant knows our business inside out and always picks up the phone.",
-    name: "James Okonkwo",
-    role: "Director, Okonkwo Digital Ltd",
-    initials: "JO",
+      "The personalised support made a huge difference. Lessons were engaging, structured and tailored exactly to what my son needed.",
+    name: "James Thompson",
+    role: "Parent of Year 8 Student",
+    initials: "JT",
   },
   {
     quote:
-      "Clear pricing, no jargon, and genuinely helpful advice on VAT and payroll as we grew from two to twelve employees. Couldn't recommend them more.",
+      "Excellent communication, fantastic tutors and real results. We saw a noticeable improvement in both grades and confidence.",
     name: "Emma Richardson",
-    role: "Founder, Richardson & Bloom",
+    role: "Parent of A-Level Student",
     initials: "ER",
   },
 ];
 
 export const softwareLogos = [
-  { name: "Xero", src: "/images/xero.png" },
-  { name: "QuickBooks", src: "/images/quickbooks.png" },
-  { name: "FreeAgent", src: "/images/freeagent.png" },
-  { name: "Sage", src: "/images/sage.png" },
-  { name: "Dext", src: "/images/dext.png" },
+  { name: "Primary", src: "" },
+  { name: "KS2 SATs", src: "" },
+  { name: "11+ Entrance", src: "" },
+  { name: "GCSE", src: "" },
+  { name: "A-Level", src: "" },
+  { name: "Online Tuition", src: "" },
 ];
 
 export const contactFaqs = [
@@ -161,10 +162,10 @@ export const contactFaqs = [
 ];
 
 export const footerBadges = [
-  "FCA Registered",
-  "ICO Registered",
-  "Making Tax Digital Ready",
-  "Cloud Accounting Specialists",
+  "Primary Education",
+  "GCSE Tuition",
+  "A-Level Support",
+  "Online Learning",
 ];
 
 export const pricingPlans = [
