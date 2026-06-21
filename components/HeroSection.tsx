@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
-import { IconArrowRight, IconCheck } from "@/components/icons";
+import { IconArrowRight, IconCheck, IconMail, IconPhone } from "@/components/icons";
+import { siteConfig } from "@/lib/content";
 
 type HeroImage = {
   src: string;
@@ -23,14 +24,13 @@ type HeroSectionProps = {
 };
 
 const defaultHeroImage: HeroImage = {
-  src: "/images/teaching-1.jpg",
+  src: "/images/hero-home.jpg",
   alt: "Professional accountant reviewing financial documents with a client",
   label: "Your dedicated accountant",
 };
 
 const contactCardHighlights = [
-  "Free Learning Assessment",
-  "Free initial consultation",
+  "Free 30-minute consultation",
   "No obligation",
   "Response within 1 business day",
 ];
@@ -38,12 +38,14 @@ const contactCardHighlights = [
 function ContactInfoCard() {
   return (
     <div className="rounded-[8px] border border-primary/12 bg-section-white p-5 shadow-lg shadow-primary/8 ring-1 ring-primary/8 sm:p-8">
-      <p className="font-serif text-2xl font-medium text-primary">
-        Free Learning Assessment
+      <p className="text-xs font-semibold uppercase tracking-widest text-accent-text">
+        Get in touch
+      </p>
+      <p className="mt-2 font-serif text-2xl font-medium text-primary">
+        Free 30-minute consultation
       </p>
       <p className="mt-2 text-sm text-text-muted">
-        Speak with an experienced tutor about your child&apos;s learning needs — no obligation,
-        no pressure.
+        Speak with a qualified accountant about your business — no obligation, no hard sell.
       </p>
 
       <ul className="mt-6 space-y-3">
@@ -56,20 +58,55 @@ function ContactInfoCard() {
           </li>
         ))}
       </ul>
+
+      <div className="mt-6 space-y-4 border-t border-primary/10 pt-6">
+        <a
+          href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+          className="group flex items-center gap-3 transition-colors"
+        >
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent-text transition-colors group-hover:bg-accent-button group-hover:text-white">
+            <IconPhone className="h-4 w-4" />
+          </span>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-text-muted">
+              Phone
+            </p>
+            <p className="text-sm font-semibold text-text group-hover:text-primary">
+              {siteConfig.phone}
+            </p>
+          </div>
+        </a>
+        <a
+          href={`mailto:${siteConfig.email}`}
+          className="group flex items-center gap-3 transition-colors"
+        >
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent-text transition-colors group-hover:bg-accent-button group-hover:text-white">
+            <IconMail className="h-4 w-4" />
+          </span>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-text-muted">
+              Email
+            </p>
+            <p className="text-sm font-semibold text-text group-hover:text-primary">
+              {siteConfig.email}
+            </p>
+          </div>
+        </a>
+      </div>
     </div>
   );
 }
 
 export default function HeroSection({
-  eyebrow = "TRUSTED EDUCATION SUPPORT",
+  eyebrow = "Chartered Accountants",
   title,
   description,
   primaryCta = { label: "Book a free consultation", href: "/contact" },
   secondaryCta = { label: "View our services", href: "/services" },
   highlights = [
-    "Flexible learning plans",
-    "Experienced tutors",
-    "Clear progress updates",
+    "Fixed monthly fees",
+    "Dedicated accountant",
+    "Cloud accounting included",
   ],
   image = defaultHeroImage,
   showConsultationCard = true,
@@ -149,33 +186,36 @@ export default function HeroSection({
                 className="!aspect-auto h-[440px] sm:h-[520px] lg:!aspect-[4/5] lg:h-auto"
               />
 
-            {showConsultationCard && (
-              <div className="mt-5 rounded-[8px] border border-primary/12 bg-section-white p-5 shadow-lg shadow-primary/8 ring-1 ring-primary/8 sm:p-6 lg:absolute lg:bottom-5 lg:left-5 lg:right-5 lg:mt-0 lg:bg-section-white/95 lg:backdrop-blur-sm">
-                <p className="text-xs font-semibold uppercase tracking-widest text-accent-text">
-                  Next available
-                </p>
-                <p className="mt-2 font-serif text-xl font-medium text-primary">
-                  Free 30-minute consultation
-                </p>
-                <p className="mt-2 text-sm text-text-muted">
-                  Speak with a qualified accountant — no obligation, no hard sell.
-                </p>
-                <div className="mt-4 flex items-center gap-3 border-t border-primary/10 pt-4">
-                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full">
-                    <Image
-                      src="/images/Profile-1.png"
-                      alt="David Clarke FCA"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-text">David Clarke FCA</p>
-                    <p className="text-xs text-text-muted">Managing Partner</p>
+              {showConsultationCard && (
+                <div className="absolute inset-x-6 bottom-6 translate-y-[66px] lg:inset-x-0 lg:bottom-5 lg:translate-y-0">
+                  <div className="rounded-[8px] border border-primary/12 bg-section-white p-5 shadow-lg shadow-primary/8 ring-1 ring-primary/8 sm:p-6 lg:mx-5 lg:bg-section-white/95 lg:backdrop-blur-sm">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-accent-text">
+                      Next available
+                    </p>
+                    <p className="mt-2 font-serif text-xl font-medium text-primary">
+                      Free 30-minute consultation
+                    </p>
+                    <p className="mt-2 text-sm text-text-muted">
+                      Speak with a qualified accountant — no obligation, no hard sell.
+                    </p>
+                    <div className="mt-4 flex items-center gap-3 border-t border-primary/10 pt-4">
+                      <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full">
+                        <Image
+                          src="/images/Profile-1.png"
+                          alt="David Clarke FCA"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-text">David Clarke FCA</p>
+                        <p className="text-xs text-text-muted">Managing Partner</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         )}
       </div>
