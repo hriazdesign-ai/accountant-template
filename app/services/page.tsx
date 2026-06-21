@@ -1,38 +1,74 @@
 import type { Metadata } from "next";
 import CTASection from "@/components/CTASection";
 import HeroSection from "@/components/HeroSection";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 import SectionHeading from "@/components/SectionHeading";
 import ServicesGrid from "@/components/ServicesGrid";
-import { IconCheck } from "@/components/icons";
 import { cardHoverClass } from "@/lib/card-styles";
-import { services } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Comprehensive accounting services including bookkeeping, payroll, VAT, self-assessment, year-end accounts, and tax planning.",
+    "Personalised tutoring and education support including 1-to-1 tuition, GCSE preparation, A-Level support, homework help, online learning and study skills.",
 };
 
 const processSteps = [
   {
     step: "01",
-    title: "Discovery call",
-    description: "We learn about your business, current setup, and what you need from an accountant.",
+    title: "Free learning assessment",
+    description:
+      "We discuss your child's current level, goals, confidence and any areas where they need support.",
   },
   {
     step: "02",
-    title: "Tailored proposal",
-    description: "A clear scope of work and fixed monthly fee — no hidden charges or vague estimates.",
+    title: "Personalised learning plan",
+    description:
+      "We recommend the right tutoring approach, subjects and session frequency based on your child's needs.",
   },
   {
     step: "03",
-    title: "Smooth onboarding",
-    description: "We connect your cloud software, gather opening balances, and set up your workflows.",
+    title: "Matched with the right tutor",
+    description:
+      "Your child is paired with a supportive tutor who understands their stage, subject and learning style.",
   },
   {
     step: "04",
-    title: "Ongoing partnership",
-    description: "Regular reviews, proactive advice, and a dedicated point of contact year-round.",
+    title: "Ongoing progress support",
+    description:
+      "We provide regular feedback so parents can see progress and students stay motivated.",
+  },
+];
+
+const familyChoiceCards = [
+  {
+    title: "Personalised Learning Plans",
+    description:
+      "Every student receives support tailored to their level, goals and learning style.",
+  },
+  {
+    title: "Qualified Tutors",
+    description:
+      "Supportive educators who understand how to explain concepts clearly and build confidence.",
+  },
+  {
+    title: "Progress Feedback",
+    description:
+      "Regular updates help parents understand what is improving and where support is still needed.",
+  },
+  {
+    title: "Flexible Scheduling",
+    description:
+      "Choose online or in-person sessions that work around school and family life.",
+  },
+  {
+    title: "Exam Preparation",
+    description:
+      "Structured support for GCSE, A-Level, SATs and entrance exam preparation.",
+  },
+  {
+    title: "Confidence Building",
+    description:
+      "We focus on helping students feel more capable, motivated and independent.",
   },
 ];
 
@@ -41,59 +77,54 @@ export default function ServicesPage() {
     <>
       <HeroSection
         eyebrow="Our Services"
-        title="Full-service accounting, tailored to your business"
-        description="From your first invoice to your year-end filing, we provide the expertise and support you need at every stage — with transparent pricing and no jargon."
-        primaryCta={{ label: "Get a custom quote", href: "/contact" }}
+        title="Tutoring and learning support for every stage"
+        description="From primary foundations to GCSE and A-Level preparation, we provide personalised support that helps students build confidence, improve skills and achieve better results."
+        primaryCta={{ label: "Book a free assessment", href: "/contact" }}
         secondaryCta={{ label: "View pricing", href: "/pricing" }}
         highlights={[
-          "All services under one firm",
-          "Qualified chartered accountants",
-          "Cloud software included",
+          "1-to-1 personalised tuition",
+          "Primary, GCSE and A-Level support",
+          "Online and in-person learning",
         ]}
         image={{
-          src: "/images/pexels-rdne-7821716.jpg",
-          alt: "Accountant reviewing financial dashboard on screen",
-          label: "Real-time financial clarity",
+          src: "/images/teaching-8.jpg",
+          alt: "Tutor helping a student during a lesson",
+          label: "Personalised learning support",
         }}
         showConsultationCard={false}
       />
 
-      <ServicesGrid showHeading={false} tone="white" />
+      <div className="-mt-14 sm:-mt-16">
+        <ServicesGrid showHeading={false} tone="white" />
+      </div>
 
       <section className="bg-section-warm py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
+          <ImagePlaceholder
+            src="/images/teaching-4.jpg"
+            alt="Students engaged in a collaborative learning session"
+            label="Supportive learning environment"
+            aspectRatio="banner"
+          />
+
+          <div className="mx-auto mb-12 mt-16 max-w-2xl text-center sm:mt-20">
             <SectionHeading
-              eyebrow="What's Included"
-              title="Every service, explained"
-              description="Detailed breakdown of what we handle on your behalf — so you know exactly where our support begins and ends."
+              eyebrow="Why Families Choose Us"
+              title="Why families choose Bright Path"
+              description="Our approach is designed to make tutoring clear, flexible and supportive for both students and parents."
             />
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2">
-            {services.map((service) => (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {familyChoiceCards.map((item) => (
               <div
-                key={service.title}
+                key={item.title}
                 className={`rounded-[8px] border border-primary/10 bg-white p-6 sm:p-8 ${cardHoverClass}`}
               >
-                <h3 className="font-serif text-xl font-medium text-text">
-                  {service.title}
-                </h3>
+                <h3 className="font-serif text-xl font-medium text-text">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-text-muted">
-                  {service.description}
+                  {item.description}
                 </p>
-                <ul className="mt-4 space-y-2">
-                  {[
-                    "Dedicated point of contact",
-                    "HMRC & Companies House filing",
-                    "Quarterly review included",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-sm text-text">
-                      <IconCheck className="h-4 w-4 shrink-0 text-accent-text" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>
@@ -109,8 +140,8 @@ export default function ServicesPage() {
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <SectionHeading
               eyebrow="How It Works"
-              title="Getting started is straightforward"
-              description="We keep onboarding simple so you can focus on running your business from day one."
+              title="Getting started is simple"
+              description="We keep the process clear and supportive, from the first assessment through to regular tutoring sessions."
             />
           </div>
 
@@ -145,8 +176,8 @@ export default function ServicesPage() {
       </section>
 
       <CTASection
-        title="Not sure which services you need?"
-        description="Tell us about your business and we'll recommend the right package — or build a bespoke solution that fits."
+        title="Let's build a learning plan together"
+        description="Tell us about your child's goals and challenges, and we'll recommend the right support to help them move forward with confidence."
       />
     </>
   );

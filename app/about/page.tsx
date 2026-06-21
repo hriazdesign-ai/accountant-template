@@ -97,7 +97,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <ImagePlaceholder
-              src="/images/teaching-1.jpg"
+              src="/images/teaching-5.jpg"
               alt="Tutor providing one-to-one educational support"
               label="Dedicated tutoring support"
               aspectRatio="editorial"
