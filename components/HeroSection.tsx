@@ -149,36 +149,33 @@ export default function HeroSection({
                 className="!aspect-auto h-[440px] sm:h-[520px] lg:!aspect-[4/5] lg:h-auto"
               />
 
-              {showConsultationCard && (
-                <div className="absolute inset-x-6 bottom-6 translate-y-[66px] lg:inset-x-0 lg:bottom-5 lg:translate-y-0">
-                  <div className="rounded-[8px] border border-primary/12 bg-section-white p-5 shadow-lg shadow-primary/8 ring-1 ring-primary/8 sm:p-6 lg:mx-5 lg:bg-section-white/95 lg:backdrop-blur-sm">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-accent-text">
-                      Next available
-                    </p>
-                    <p className="mt-2 font-serif text-xl font-medium text-primary">
-                      Free Learning Assessment
-                    </p>
-                    <p className="mt-2 text-sm text-text-muted">
-                      Book a free learning assessment and explore how we can support academic success.
-                    </p>
-                    <div className="mt-4 flex items-center gap-3 border-t border-primary/10 pt-4">
-                      <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full">
-                        <Image
-                          src="/images/profile-sarah.png"
-                          alt="Sarah Ahmed"
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-text">Sarah Ahmed</p>
-                        <p className="text-xs text-text-muted">Lead Learning Advisor</p>
-                      </div>
-                    </div>
+            {showConsultationCard && (
+              <div className="mt-5 rounded-[8px] border border-primary/12 bg-section-white p-5 shadow-lg shadow-primary/8 ring-1 ring-primary/8 sm:p-6 lg:absolute lg:bottom-5 lg:left-5 lg:right-5 lg:mt-0 lg:bg-section-white/95 lg:backdrop-blur-sm">
+                <p className="text-xs font-semibold uppercase tracking-widest text-accent-text">
+                  Next available
+                </p>
+                <p className="mt-2 font-serif text-xl font-medium text-primary">
+                  Free 30-minute consultation
+                </p>
+                <p className="mt-2 text-sm text-text-muted">
+                  Speak with a qualified accountant — no obligation, no hard sell.
+                </p>
+                <div className="mt-4 flex items-center gap-3 border-t border-primary/10 pt-4">
+                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full">
+                    <Image
+                      src="/images/Profile-1.png"
+                      alt="David Clarke FCA"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-text">David Clarke FCA</p>
+                    <p className="text-xs text-text-muted">Managing Partner</p>
                   </div>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         )}
       </div>
