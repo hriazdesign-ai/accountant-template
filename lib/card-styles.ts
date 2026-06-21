@@ -1,6 +1,6 @@
-/** Shared hover treatment for card-like containers (desktop only) */
+/** Shared hover treatment for card-like containers */
 export const cardHoverClass =
-  "shadow-sm md:transition-all md:duration-300 md:hover:-translate-y-1 md:hover:border-primary/20 md:hover:shadow-lg md:hover:shadow-primary/12";
+  "shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-primary/20 hover:shadow-md hover:shadow-primary/10";
 
 export const cardHoverClassDark =
-  "md:transition-all md:duration-300 md:hover:-translate-y-1 md:hover:border-accent/40 md:hover:shadow-2xl md:hover:shadow-primary/25";
+  "transition-all duration-200 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-primary/20";

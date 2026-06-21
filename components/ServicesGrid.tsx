@@ -37,8 +37,8 @@ export default function ServicesGrid({
             <SectionHeading
               showKeyline={false}
               eyebrow="Our Services"
-              title="Support for every stage of learning"
-              description="From personalised tutoring and homework support to GCSE and A-Level preparation."
+              title="Everything your business needs, under one roof"
+              description="From day-to-day bookkeeping to strategic tax planning — comprehensive accounting tailored to how you work."
             />
           </div>
         )}

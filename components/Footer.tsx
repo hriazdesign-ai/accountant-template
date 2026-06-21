@@ -17,7 +17,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/85">
-            Helping students build confidence, improve results and develop a lifelong love of learning.
+              Trusted accounting for sole traders, small businesses, and limited companies across the UK.
             </p>
           </div>
 
@@ -44,11 +44,11 @@ export default function Footer() {
               Services
             </h3>
             <ul className="mt-4 space-y-2 text-sm text-white/90">
-              <li>1-to-1 Tutoring</li>
-              <li>GCSE Preparation</li>
-              <li>A-Level Support</li>
-              <li>Homework Help</li>
-              <li>Online Learning</li>
+              <li>Self Assessment</li>
+              <li>Bookkeeping</li>
+              <li>Payroll & VAT</li>
+              <li>Year-End Accounts</li>
+              <li>Tax Planning</li>
             </ul>
           </div>
 

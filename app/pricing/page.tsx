@@ -10,29 +10,29 @@ import { pricingPlans } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Clear tutoring packages for primary, secondary, GCSE and A-Level students. Flexible support with no long-term contracts.",
+    "Transparent, fixed monthly accounting fees for sole traders, small businesses, and limited companies. No surprise bills.",
 };
 
 const faqs = [
   {
     question: "Are there any setup fees?",
     answer:
-      "No. The initial learning assessment is free, and we'll recommend the right support before you commit to regular sessions.",
+      "No. Onboarding is included in your first month. We'll connect your software, review your records, and get everything in order at no extra charge.",
   },
   {
-    question: "Can I change my child's plan later?",
+    question: "Can I switch plans as my business grows?",
     answer:
-      "Yes. You can increase, reduce or change support as your child's needs change, including around exams or school transitions.",
+      "Absolutely. Many clients start on Starter and move to Growth or Company as they take on staff or incorporate. We'll adjust your package with 30 days' notice.",
   },
   {
-    question: "Do you offer online and in-person tutoring?",
+    question: "What if I need something not listed?",
     answer:
-      "Yes. We offer flexible online tutoring and in-person support depending on location, availability and the student's needs.",
+      "We offer bespoke packages for businesses with specific needs — R&D claims, multi-entity structures, or high transaction volumes. Contact us for a tailored quote.",
   },
   {
-    question: "What if I'm not sure what my child needs?",
+    question: "Do prices include VAT?",
     answer:
-      "That's exactly what the free assessment is for. We'll discuss goals, confidence, current challenges and recommend the most suitable support.",
+      "All prices shown are exclusive of VAT. VAT-registered businesses can reclaim VAT on our fees.",
   },
 ];
 
@@ -41,21 +41,20 @@ export default function PricingPage() {
     <>
       <HeroSection
         eyebrow="Pricing"
-        title="Simple tutoring packages, built around your child"
-        description="Choose flexible learning support that fits your child's goals, schedule and stage of education — with clear pricing and no long-term commitment."
-        primaryCta={{ label: "Book a free assessment", href: "/contact" }}
+        title="Clear fees. No surprises."
+        description="Fixed monthly pricing so you can budget with confidence. Every package includes a dedicated accountant, cloud software support, and proactive advice."
+        primaryCta={{ label: "Get a custom quote", href: "/contact" }}
         secondaryCta={{ label: "Compare services", href: "/services" }}
         highlights={[
           "No long-term contracts",
-          "Flexible session options",
-          "Support for primary to A-Level",
+          "Cancel with 30 days' notice",
+          "All packages include support",
         ]}
         image={{
-          src: "/images/teaching-1.jpg",
-          alt: "Tutor supporting a student with schoolwork",
-          label: "Flexible learning support",
+          src: "/images/office-desk.jpg",
+          alt: "Accounting team working with clients",
+          label: "Trusted accounting advice",
         }}
-        showConsultationCard={false}
       />
 
       <section className="bg-section-white py-16 sm:py-24">
@@ -129,24 +128,24 @@ export default function PricingPage() {
                       : "bg-primary text-white hover:bg-primary-light"
                   }`}
                 >
-                  Book assessment
+                  Get started
                 </Link>
               </article>
             ))}
           </div>
 
           <p className="mt-8 text-center text-sm text-text-muted">
-            Need something more tailored?{" "}
+            All prices exclude VAT. Need a bespoke package?{" "}
             <Link href="/contact" className="font-semibold text-accent-text hover:text-accent-button">
               Contact us
             </Link>{" "}
-            and we&apos;ll recommend the right learning support for your child.
+            for a tailored quote.
           </p>
         </div>
       </section>
 
       <section className="bg-section-warm py-16 sm:py-24">
-        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <SectionHeading
               eyebrow="FAQ"
@@ -175,7 +174,7 @@ export default function PricingPage() {
 
       <CTASection
         title="Still comparing options?"
-        description="Book a free learning assessment and we'll help you choose the right support for your child — with honest advice and no pressure."
+        description="Book a free consultation and we'll walk you through the right package for your business — with honest advice, not a sales pitch."
       />
     </>
   );
