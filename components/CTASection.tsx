@@ -30,7 +30,7 @@ export default function CTASection({
             href="/contact"
             className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-semibold text-primary shadow-lg shadow-black/20 transition-all hover:bg-section-warm hover:shadow-xl hover:shadow-black/25"
           >
-            Book your free consultation
+            Book your free assessment
             <IconArrowRight className="h-4 w-4" />
           </Link>
           <a

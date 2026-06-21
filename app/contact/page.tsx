@@ -5,22 +5,43 @@ import ImagePlaceholder from "@/components/ImagePlaceholder";
 import SectionHeading from "@/components/SectionHeading";
 import { IconLocation, IconMail, IconPhone } from "@/components/icons";
 import { cardHoverClass } from "@/lib/card-styles";
-import { contactFaqs, siteConfig } from "@/lib/content";
+import { siteConfig } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Meridian & Co. for a free accounting consultation. Call, email, or fill in our contact form.",
+    "Book a free learning assessment and discover how personalised tutoring can help your child build confidence and achieve their goals.",
 };
+
+const contactFaqs = [
+  {
+    question: "How quickly do you respond?",
+    answer: "We aim to respond to all enquiries within one business day.",
+  },
+  {
+    question: "Do you offer online tutoring?",
+    answer:
+      "Yes. We offer both online and in-person tutoring depending on location and availability.",
+  },
+  {
+    question: "Can I arrange a free assessment?",
+    answer:
+      "Yes. Every family can book a free initial assessment before committing to regular sessions.",
+  },
+  {
+    question: "What ages do you support?",
+    answer: "We support students from primary school through to GCSE and A-Level.",
+  },
+];
 
 export default function ContactPage() {
   return (
     <>
       <HeroSection
         eyebrow="Contact"
-        title="Let's talk about your accounts"
-        description="Whether you're switching accountants or setting up for the first time, we'd love to hear from you. Book a free consultation or send us a message — we respond within one business day."
-        primaryCta={{ label: "Call us now", href: `tel:${siteConfig.phone.replace(/\s/g, "")}` }}
+        title="Book a free learning assessment"
+        description="Whether your child needs help building confidence, preparing for exams or improving subject knowledge, we'd love to hear from you. Book a free assessment and we'll recommend the right support."
+        primaryCta={{ label: "Book assessment", href: "#contact-form" }}
         secondaryCta={{ label: "View pricing", href: "/pricing" }}
         image={null}
         showContactCard
@@ -31,10 +52,11 @@ export default function ContactPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 lg:hidden">
             <ImagePlaceholder
-              src="/images/office.jpg"
-              alt="Meridian and Co. accounting office in London"
-              label="Our London office"
+              src="/images/teaching-4.jpg"
+              alt="Tutor supporting a student in the classroom"
+              label="Learning support available"
               aspectRatio="wide"
+              className="!aspect-[16/14]"
             />
           </div>
 
@@ -42,19 +64,20 @@ export default function ContactPage() {
             <div className="lg:col-span-2">
               <div className="mb-8 hidden lg:block">
                 <ImagePlaceholder
-                  src="/images/office.jpg"
-                  alt="Meridian and Co. accounting office in London"
-                  label="Our London office"
+                  src="/images/teaching-4.jpg"
+                  alt="Tutor supporting a student in the classroom"
+                  label="Learning support available"
                   aspectRatio="wide"
+                  className="!aspect-[16/14]"
                 />
               </div>
 
               <h2 className="font-serif text-2xl font-medium text-text">
-                Get in touch
+                Speak with our team
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-text-muted">
-                Prefer to talk? Call us directly or drop us an email. Our team is available
-                Monday to Friday, 9am to 5:30pm.
+                Prefer to speak with someone? Call, email or send us a message. We aim to
+                respond to all enquiries within one business day.
               </p>
 
               <ul className="mt-8 space-y-6">
@@ -91,9 +114,11 @@ export default function ContactPage() {
                     <IconLocation className="h-5 w-5" />
                   </span>
                   <div>
-                    <p className="text-sm font-semibold text-text">Office</p>
+                    <p className="text-sm font-semibold text-text">Location</p>
                     <p className="text-sm text-text-muted">{siteConfig.address}</p>
-                    <p className="mt-1 text-xs text-text-muted">{siteConfig.hours}</p>
+                    <p className="mt-1 text-xs text-text-muted">
+                      Flexible appointment times available
+                    </p>
                   </div>
                 </li>
               </ul>
@@ -101,6 +126,7 @@ export default function ContactPage() {
 
             <div className="lg:col-span-3">
               <form
+                id="contact-form"
                 className="rounded-[8px] border border-primary/10 bg-white p-6 sm:p-8"
                 action="#"
                 method="post"
@@ -109,71 +135,96 @@ export default function ContactPage() {
                   Send us a message
                 </h3>
                 <p className="mt-1 text-sm text-text-muted">
-                  Fill in the form below and we&apos;ll be in touch shortly.
+                  Tell us a little about your child and we&apos;ll recommend the most suitable
+                  support.
                 </p>
 
-                <div className="mt-6 grid gap-5 sm:grid-cols-2">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-text">
-                      First name
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      required
-                      className="mt-1.5 w-full rounded-[4px] border border-primary/15 bg-section-warm px-4 py-2.5 text-sm text-text outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
-                      placeholder="Jane"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-text">
-                      Last name
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      required
-                      className="mt-1.5 w-full rounded-[4px] border border-primary/15 bg-section-warm px-4 py-2.5 text-sm text-text outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
-                      placeholder="Smith"
-                    />
-                  </div>
-                </div>
-
-                <div className="mt-5">
-                  <label htmlFor="email" className="block text-sm font-medium text-text">
-                    Email address
+                <div className="mt-6">
+                  <label htmlFor="parentName" className="block text-sm font-medium text-text">
+                    Parent Name
                   </label>
                   <input
-                    type="email"
-                    id="email"
-                    name="email"
+                    type="text"
+                    id="parentName"
+                    name="parentName"
                     required
                     className="mt-1.5 w-full rounded-[4px] border border-primary/15 bg-section-warm px-4 py-2.5 text-sm text-text outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
-                    placeholder="jane@example.com"
+                    placeholder="Jane Smith"
                   />
                 </div>
 
+                <div className="mt-5 grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-text">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      className="mt-1.5 w-full rounded-[4px] border border-primary/15 bg-section-warm px-4 py-2.5 text-sm text-text outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
+                      placeholder="jane@example.com"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-text">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      className="mt-1.5 w-full rounded-[4px] border border-primary/15 bg-section-warm px-4 py-2.5 text-sm text-text outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
+                      placeholder="07123 456789"
+                    />
+                  </div>
+                </div>
+
                 <div className="mt-5">
-                  <label htmlFor="businessType" className="block text-sm font-medium text-text">
-                    Business type
+                  <label htmlFor="schoolYear" className="block text-sm font-medium text-text">
+                    Child&apos;s School Year
                   </label>
                   <select
-                    id="businessType"
-                    name="businessType"
+                    id="schoolYear"
+                    name="schoolYear"
                     className="mt-1.5 w-full rounded-[4px] border border-primary/15 bg-section-warm px-4 py-2.5 text-sm text-text outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
                   >
-                    <option value="sole-trader">Sole trader</option>
-                    <option value="small-business">Small business</option>
-                    <option value="limited-company">Limited company</option>
-                    <option value="other">Other / Not sure</option>
+                    <option value="primary">Primary School</option>
+                    <option value="year-7">Year 7</option>
+                    <option value="year-8">Year 8</option>
+                    <option value="year-9">Year 9</option>
+                    <option value="year-10">Year 10</option>
+                    <option value="year-11">Year 11 (GCSE)</option>
+                    <option value="year-12">Year 12 (A-Level)</option>
+                    <option value="year-13">Year 13 (A-Level)</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div className="mt-5">
+                  <label htmlFor="subject" className="block text-sm font-medium text-text">
+                    Subject Required
+                  </label>
+                  <select
+                    id="subject"
+                    name="subject"
+                    className="mt-1.5 w-full rounded-[4px] border border-primary/15 bg-section-warm px-4 py-2.5 text-sm text-text outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
+                  >
+                    <option value="maths">Maths</option>
+                    <option value="english">English</option>
+                    <option value="science">Science</option>
+                    <option value="gcse">GCSE Support</option>
+                    <option value="a-level">A-Level Support</option>
+                    <option value="study-skills">Study Skills</option>
+                    <option value="other">Other</option>
                   </select>
                 </div>
 
                 <div className="mt-5">
                   <label htmlFor="message" className="block text-sm font-medium text-text">
-                    How can we help?
+                    Message
                   </label>
                   <textarea
                     id="message"
@@ -181,7 +232,7 @@ export default function ContactPage() {
                     rows={4}
                     required
                     className="mt-1.5 w-full resize-y rounded-[4px] border border-primary/15 bg-section-warm px-4 py-2.5 text-sm text-text outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
-                    placeholder="Tell us about your business and what you're looking for..."
+                    placeholder="Tell us about your child's goals, challenges or the support you're looking for..."
                   />
                 </div>
 
@@ -193,8 +244,8 @@ export default function ContactPage() {
                 </button>
 
                 <p className="mt-4 text-xs text-text-muted">
-                  By submitting this form, you agree to be contacted about our services.
-                  We never share your details with third parties.
+                  We&apos;ll only use your information to respond to your enquiry and discuss
+                  suitable learning support options.
                 </p>
               </form>
             </div>
@@ -202,9 +253,13 @@ export default function ContactPage() {
         </div>
       </section>
 
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="border-t border-primary/10" />
+      </div>
+
       <section className="bg-section-warm py-16 sm:py-24">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 text-center sm:mb-12">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
             <SectionHeading
               eyebrow="FAQ"
               title="Common questions"
@@ -227,8 +282,8 @@ export default function ContactPage() {
       </section>
 
       <CTASection
-        title="Ready to speak with an accountant?"
-        description="Book your free consultation today — we'll answer your questions and recommend the right approach for your business."
+        title="Ready to unlock your child's potential?"
+        description="Book a free learning assessment and discover how personalised tutoring can help build confidence, improve grades and develop lifelong learning skills."
       />
     </>
   );

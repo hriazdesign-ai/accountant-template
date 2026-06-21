@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
-import { IconArrowRight, IconCheck, IconMail, IconPhone } from "@/components/icons";
-import { siteConfig } from "@/lib/content";
+import { IconArrowRight, IconCheck } from "@/components/icons";
 
 type HeroImage = {
   src: string;
@@ -31,6 +30,7 @@ const defaultHeroImage: HeroImage = {
 
 const contactCardHighlights = [
   "Free Learning Assessment",
+  "Free initial consultation",
   "No obligation",
   "Response within 1 business day",
 ];
@@ -38,14 +38,12 @@ const contactCardHighlights = [
 function ContactInfoCard() {
   return (
     <div className="rounded-[8px] border border-primary/12 bg-section-white p-5 shadow-lg shadow-primary/8 ring-1 ring-primary/8 sm:p-8">
-      <p className="text-xs font-semibold uppercase tracking-widest text-accent-text">
-        Get in touch
-      </p>
-      <p className="mt-2 font-serif text-2xl font-medium text-primary">
+      <p className="font-serif text-2xl font-medium text-primary">
         Free Learning Assessment
       </p>
       <p className="mt-2 text-sm text-text-muted">
-        Speak with a qualified accountant about your business — no obligation, no hard sell.
+        Speak with an experienced tutor about your child&apos;s learning needs — no obligation,
+        no pressure.
       </p>
 
       <ul className="mt-6 space-y-3">
@@ -58,41 +56,6 @@ function ContactInfoCard() {
           </li>
         ))}
       </ul>
-
-      <div className="mt-6 space-y-4 border-t border-primary/10 pt-6">
-        <a
-          href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-          className="group flex items-center gap-3 transition-colors"
-        >
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent-text transition-colors group-hover:bg-accent-button group-hover:text-white">
-            <IconPhone className="h-4 w-4" />
-          </span>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-text-muted">
-              Phone
-            </p>
-            <p className="text-sm font-semibold text-text group-hover:text-primary">
-              {siteConfig.phone}
-            </p>
-          </div>
-        </a>
-        <a
-          href={`mailto:${siteConfig.email}`}
-          className="group flex items-center gap-3 transition-colors"
-        >
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent-text transition-colors group-hover:bg-accent-button group-hover:text-white">
-            <IconMail className="h-4 w-4" />
-          </span>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-text-muted">
-              Email
-            </p>
-            <p className="text-sm font-semibold text-text group-hover:text-primary">
-              {siteConfig.email}
-            </p>
-          </div>
-        </a>
-      </div>
     </div>
   );
 }
@@ -169,7 +132,7 @@ export default function HeroSection({
         </div>
 
         {showContactCard && (
-          <div className="mx-auto w-full max-w-md lg:max-w-none">
+          <div className="w-full max-w-none sm:max-w-none lg:max-w-none">
             <ContactInfoCard />
           </div>
         )}
