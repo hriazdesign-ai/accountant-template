@@ -14,7 +14,7 @@ export default function WhyChooseUsSection({ tone = "mint" }: WhyChooseUsSection
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div>
           <ImagePlaceholder
-            src="/images/treaching-2.jpg"
+            src="/images/teaching-2.jpg"
             alt="Modern architectural office building and financial workspace"
             label="Modern business environment"
             aspectRatio="banner"

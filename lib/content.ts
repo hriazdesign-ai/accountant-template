@@ -16,10 +16,10 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { value: "500+", label: "Students supported" },
-  { value: "12+", label: "Subjects covered" },
-  { value: "95%", label: "Parent satisfaction" },
-  { value: "1:1", label: "Personalised support" },
+  { value: "500+", label: "Students Supported" },
+  { value: "12+", label: "Subjects Available" },
+  { value: "95%", label: "Parent Satisfaction" },
+  { value: "1:1", label: "Personalised Support" },
 ];
 
 export const services = [
@@ -217,24 +217,24 @@ export const pricingPlans = [
 
 export const team = [
   {
-    name: "David Clarke FCA",
-    image: "/images/Profile-1.png",
-    role: "Managing Partner",
-    bio: "20 years advising SMEs across London and the South East. Specialises in tax planning for growing businesses.",
-    initials: "DC",
+    name: "Sarah Ahmed",
+    image: "/images/profile-sarah.png",
+    role: "Primary Education Specialist",
+    bio: "Supports younger learners with reading, writing, maths and confidence-building through calm, structured lessons.",
+    initials: "SA",
   },
   {
-    name: "Priya Sharma ACCA",
-    image: "/images/priya.png",
-    role: "Senior Accountant",
-    bio: "Expert in cloud accounting and VAT. Helps clients migrate from spreadsheets to real-time financial visibility.",
-    initials: "PS",
+    name: "James Thompson",
+    image: "/images/james.png",
+    role: "GCSE Maths Tutor",
+    bio: "Helps secondary students strengthen core maths skills, prepare for exams and build confidence with problem-solving.",
+    initials: "JT",
   },
   {
-    name: "Michael Torres",
-    image: "/images/Profile-2.png",
-    role: "Payroll & Compliance",
-    bio: "Ensures every client meets HMRC and Companies House deadlines — payroll, pensions, and statutory filings.",
-    initials: "MT",
+    name: "Rebecca Khan",
+    image: "/images/rebecca.png",
+    role: "English & Study Skills Tutor",
+    bio: "Focuses on English, revision techniques and independent learning skills for GCSE and A-Level students.",
+    initials: "RK",
   },
 ];

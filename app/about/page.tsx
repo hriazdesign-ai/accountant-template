@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import HeroSection from "@/components/HeroSection";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 import SectionHeading from "@/components/SectionHeading";
 import StatsSection from "@/components/StatsSection";
 import { IconCheck } from "@/components/icons";
@@ -12,21 +13,24 @@ import { team, whyChooseUs } from "@/lib/content";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet the team behind Meridian & Co. — chartered accountants with 15+ years of experience supporting UK businesses.",
+    "Learn about Bright Path Learning — personalised tutoring and education support for primary, secondary and college students.",
 };
 
 const values = [
   {
-    title: "Integrity",
-    description: "Honest advice, transparent fees, and always acting in your best interest.",
+    title: "Confidence",
+    description:
+      "Helping students believe in their ability and approach learning with a positive mindset.",
   },
   {
     title: "Clarity",
-    description: "Plain English, no jargon. You should always understand your numbers and obligations.",
+    description:
+      "Clear explanations, structured lessons and regular progress updates for families.",
   },
   {
-    title: "Proactivity",
-    description: "We don't wait for deadlines — we anticipate them and plan ahead with you.",
+    title: "Growth",
+    description:
+      "Supporting every student to improve at their own pace and build long-term learning skills.",
   },
 ];
 
@@ -35,19 +39,19 @@ export default function AboutPage() {
     <>
       <HeroSection
         eyebrow="About Us"
-        title="Accountants who understand small business"
-        description="Founded in 2009, Meridian & Co. was built on a simple belief: every business deserves the same quality of accounting advice as a large corporation — without the corporate price tag or impersonal service."
-        primaryCta={{ label: "Meet the team below", href: "#team" }}
+        title="Helping every student learn with confidence"
+        description="Bright Path Learning provides personalised tutoring and educational support for students at every stage — from primary foundations to GCSE and A-Level preparation."
+        primaryCta={{ label: "Meet the tutors", href: "#team" }}
         secondaryCta={{ label: "View our services", href: "/services" }}
         highlights={[
-          "FCA registered practice",
-          "850+ clients nationwide",
-          "Based in London, serving the UK",
+          "Primary, GCSE and A-Level support",
+          "Personalised learning plans",
+          "Online and in-person tuition",
         ]}
         image={{
-          src: "/images/desk.jpg",
-          alt: "Accounting team working with clients",
-          label: "Trusted accounting advice",
+          src: "/images/teaching-6.jpg",
+          alt: "Tutor supporting a student during a lesson",
+          label: "Personalised education support",
         }}
       />
 
@@ -59,30 +63,51 @@ export default function AboutPage() {
             <div>
               <SectionHeading
                 eyebrow="Our Story"
-                title="Built for businesses like yours"
-                description="What started as a two-person practice in the City has grown into a team of eight — but we've never lost the personal touch that our clients value most."
+                title="Built around the way students learn"
+                description="We started Bright Path Learning to give families a more personal and supportive alternative to one-size-fits-all tuition."
                 align="left"
               />
               <div className="mt-6 space-y-4 text-sm leading-relaxed text-text-muted">
                 <p>
-                  We specialise in working with sole traders, small businesses, and limited companies
-                  at every stage — from first-year startups navigating self-assessment to established
-                  companies planning for growth and exit.
+                  We work with primary, secondary and college students who need extra support,
+                  exam preparation or a confidence boost in the classroom.
                 </p>
                 <p>
-                  Our approach combines traditional chartered expertise with modern cloud accounting
-                  tools, giving you real-time visibility into your finances without the overhead of
-                  an in-house finance team.
+                  Our approach combines experienced tutors, structured learning plans and regular
+                  feedback so parents always understand how their child is progressing.
                 </p>
               </div>
             </div>
 
+            <ImagePlaceholder
+              src="/images/teaching-3.jpg"
+              alt="Students learning with support from a tutor"
+              label="Personalised learning support"
+              aspectRatio="editorial"
+            />
+          </div>
+        </div>
+      </section>
+
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="border-t border-primary/10" />
+      </div>
+
+      <section className="bg-section-warm py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <ImagePlaceholder
+              src="/images/teaching-1.jpg"
+              alt="Tutor providing one-to-one educational support"
+              label="Dedicated tutoring support"
+              aspectRatio="editorial"
+            />
+
             <div className="rounded-[8px] border border-primary/10 bg-primary p-8 text-white sm:p-10">
               <h3 className="font-serif text-2xl font-medium">Our mission</h3>
               <p className="mt-4 text-sm leading-relaxed text-white/90">
-                To remove the stress and uncertainty from business finances — so our clients can
-                make better decisions, pay less tax legally, and sleep soundly knowing their
-                compliance is handled.
+                To help students build confidence, improve results and develop the skills they need
+                to become independent learners.
               </p>
               <ul className="mt-6 space-y-3">
                 {values.map((value) => (
@@ -108,9 +133,9 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <SectionHeading
-              eyebrow="Our Team"
-              title="The people behind your accounts"
-              description="Qualified, experienced, and genuinely invested in your success."
+              eyebrow="Our Tutors"
+              title="The people behind the learning"
+              description="Experienced, supportive and focused on helping every student reach their potential."
             />
           </div>
 
@@ -150,11 +175,18 @@ export default function AboutPage() {
 
       <section className="bg-section-warm py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
+          <ImagePlaceholder
+            src="/images/teaching-4.jpg"
+            alt="Students engaged in a collaborative learning session"
+            label="Supportive learning environment"
+            aspectRatio="banner"
+          />
+
+          <div className="mx-auto mb-12 mt-16 max-w-2xl text-center sm:mt-20">
             <SectionHeading
               eyebrow="Our Approach"
-              title="What sets us apart"
-              description="Four principles that guide every client relationship."
+              title="What makes our support different"
+              description="Four principles that guide every learning plan."
             />
           </div>
 
@@ -173,11 +205,11 @@ export default function AboutPage() {
           </div>
 
           <p className="mt-10 text-center text-sm text-text-muted">
-            Want to learn more?{" "}
+            Want to discuss your child&apos;s learning needs?{" "}
             <Link href="/contact" className="font-semibold text-accent-text hover:text-accent-button">
               Get in touch
             </Link>{" "}
-            for an informal chat.
+            for a free assessment.
           </p>
         </div>
       </section>
