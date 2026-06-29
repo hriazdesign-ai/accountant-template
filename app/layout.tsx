@@ -3,6 +3,7 @@ import { DM_Sans, Source_Serif_4 } from "next/font/google";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { siteConfig } from "@/lib/content";
+import { createPageMetadata, defaultDescription, siteUrl } from "@/lib/seo";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -18,12 +19,12 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: `${siteConfig.name} | ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.name}`,
   },
-  description:
-    "Premium accounting services for sole traders, small businesses, and limited companies. Bookkeeping, payroll, VAT, tax planning, and more.",
+  ...createPageMetadata({ description: defaultDescription }),
 };
 
 export default function RootLayout({
@@ -36,7 +37,7 @@ export default function RootLayout({
       lang="en-GB"
       className={`${dmSans.variable} ${sourceSerif.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-section-warm text-text">
+      <body className="flex min-h-full flex-col overflow-x-hidden bg-section-warm text-text">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

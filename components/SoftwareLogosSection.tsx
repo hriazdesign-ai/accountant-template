@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { softwareLogos } from "@/lib/content";
+import { container, logoImageClass, logoTileClass, sectionYCompact } from "@/lib/layout";
 import { publicImageExists } from "@/lib/image-utils";
 
 export default function SoftwareLogosSection() {
   return (
-    <section className="border-y border-primary/8 bg-section-white py-12 sm:py-16">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section className={`border-y border-primary/8 bg-section-white ${sectionYCompact}`}>
+      <div className={container}>
         <span className="mx-auto mb-4 block h-1 w-10 rounded-full bg-accent-text" />
         <p className="text-center text-xs font-semibold uppercase tracking-widest text-accent-text">
           Cloud Accounting
@@ -20,14 +21,14 @@ export default function SoftwareLogosSection() {
 
             return (
               <li key={logo.name}>
-                <div className="group flex h-full min-h-[5.25rem] items-center justify-center rounded-[8px] border border-primary/10 bg-white px-6 py-5 transition duration-200 hover:-translate-y-1 hover:shadow-md">
+                <div className={logoTileClass}>
                   {exists ? (
                     <Image
                       src={logo.src}
                       alt={`${logo.name} logo`}
-                      width={150}
+                      width={140}
                       height={40}
-                      className="max-h-10 w-auto object-contain opacity-80 grayscale transition duration-200 group-hover:opacity-100 group-hover:grayscale-0"
+                      className={logoImageClass}
                     />
                   ) : (
                     <span className="text-sm font-semibold tracking-tight text-primary/75 transition duration-200 group-hover:opacity-100">

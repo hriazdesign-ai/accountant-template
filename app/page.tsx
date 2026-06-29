@@ -6,6 +6,7 @@ import SoftwareLogosSection from "@/components/SoftwareLogosSection";
 import StatsSection from "@/components/StatsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
+import { container, divider } from "@/lib/layout";
 
 export default function Home() {
   return (
@@ -17,8 +18,8 @@ export default function Home() {
       <StatsSection />
       <SoftwareLogosSection />
       <ServicesGrid tone="white" compactBottom />
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="border-t border-primary/10" />
+      <div className={container}>
+        <div className={divider} />
       </div>
       <AudienceSection tone="white" compactTop />
       <WhyChooseUsSection tone="mint" />

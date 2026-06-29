@@ -6,12 +6,15 @@ import SectionHeading from "@/components/SectionHeading";
 import { IconCheck } from "@/components/icons";
 import { cardHoverClass, cardHoverClassDark } from "@/lib/card-styles";
 import { pricingPlans } from "@/lib/content";
+import { container, containerNarrow, gridGap, sectionIntroMarginCompact, sectionY } from "@/lib/layout";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Pricing",
   description:
     "Transparent, fixed monthly accounting fees for sole traders, small businesses, and limited companies. No surprise bills.",
-};
+  path: "/pricing",
+});
 
 const faqs = [
   {
@@ -57,9 +60,9 @@ export default function PricingPage() {
         }}
       />
 
-      <section className="bg-section-white py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-6 lg:grid-cols-3">
+      <section className={`bg-section-white ${sectionY}`}>
+        <div className={container}>
+          <div className={`grid ${gridGap} lg:grid-cols-3`}>
             {pricingPlans.map((plan) => (
               <article
                 key={plan.name}
@@ -144,9 +147,9 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="bg-section-warm py-16 sm:py-24">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
+      <section className={`bg-section-warm ${sectionY}`}>
+        <div className={containerNarrow}>
+          <div className={`text-center ${sectionIntroMarginCompact}`}>
             <SectionHeading
               eyebrow="FAQ"
               title="Common questions"

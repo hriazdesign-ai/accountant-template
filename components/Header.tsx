@@ -3,7 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { layoutPadding, layoutMaxWidth } from "@/lib/layout";
 import { navLinks, siteConfig } from "@/lib/content";
+
+const linkFocus =
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-text";
 
 export default function Header() {
   const pathname = usePathname();
@@ -11,8 +15,8 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-primary/10 bg-section-white/95 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="group flex flex-col">
+      <div className={`mx-auto flex ${layoutMaxWidth} items-center justify-between ${layoutPadding} py-4`}>
+        <Link href="/" className={`group flex flex-col ${linkFocus} rounded-[4px]`}>
           <span className="font-serif text-xl font-medium tracking-tight text-primary sm:text-2xl">
             {siteConfig.name}
           </span>
@@ -21,14 +25,14 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-sm font-medium transition-colors ${linkFocus} rounded-[4px] ${
                   isActive
                     ? "text-accent-text"
                     : "text-text-muted hover:text-primary"
@@ -40,16 +44,16 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="hidden items-center gap-4 lg:flex">
           <a
             href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-            className="text-sm font-medium text-text-muted transition-colors hover:text-primary"
+            className={`text-sm font-medium text-text-muted transition-colors hover:text-primary ${linkFocus} rounded-[4px]`}
           >
             {siteConfig.phone}
           </a>
           <Link
             href="/contact"
-            className="rounded-full bg-accent-button px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-button-hover"
+            className={`rounded-full bg-accent-button px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-button-hover ${linkFocus}`}
           >
             Free consultation
           </Link>
@@ -57,7 +61,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-[4px] p-2 text-primary md:hidden"
+          className={`inline-flex items-center justify-center rounded-[4px] p-2 text-primary lg:hidden ${linkFocus}`}
           aria-expanded={mobileOpen}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -76,7 +80,7 @@ export default function Header() {
 
       {mobileOpen && (
         <nav
-          className="border-t border-primary/10 bg-section-white px-4 py-4 md:hidden"
+          className={`border-t border-primary/10 bg-section-white px-4 py-4 lg:hidden ${layoutPadding}`}
           aria-label="Mobile navigation"
         >
           <ul className="flex flex-col gap-1">

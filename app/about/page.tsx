@@ -8,12 +8,15 @@ import StatsSection from "@/components/StatsSection";
 import { IconCheck } from "@/components/icons";
 import { cardHoverClass } from "@/lib/card-styles";
 import { team, whyChooseUs } from "@/lib/content";
+import { container, divider, gridGap, sectionIntroMargin, sectionY } from "@/lib/layout";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "About",
   description:
     "Meet the team behind Meridian & Co. — chartered accountants with 15+ years of experience supporting UK businesses.",
-};
+  path: "/about",
+});
 
 const values = [
   {
@@ -53,8 +56,8 @@ export default function AboutPage() {
 
       <StatsSection />
 
-      <section className="bg-section-white py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <section className={`bg-section-white ${sectionY}`}>
+        <div className={container}>
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <SectionHeading
@@ -100,13 +103,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="border-t border-primary/10" />
+      <div className={container}>
+        <div className={divider} />
       </div>
 
-      <section id="team" className="bg-section-white py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
+      <section id="team" className={`bg-section-white ${sectionY}`}>
+        <div className={container}>
+          <div className={`mx-auto max-w-2xl text-center ${sectionIntroMargin}`}>
             <SectionHeading
               eyebrow="Our Team"
               title="The people behind your accounts"
@@ -114,18 +117,19 @@ export default function AboutPage() {
             />
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className={`grid items-stretch ${gridGap} sm:grid-cols-2 lg:grid-cols-3`}>
             {team.map((member) => (
               <article
                 key={member.name}
-                className={`rounded-[8px] border border-primary/10 bg-white p-6 sm:p-8 ${cardHoverClass}`}
+                className={`flex h-full flex-col rounded-[8px] border border-primary/10 bg-white p-6 sm:p-8 ${cardHoverClass}`}
               >
                 {member.image ? (
-                  <div className="relative h-24 w-24 overflow-hidden rounded-full">
+                  <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full">
                     <Image
                       src={member.image}
                       alt={member.name}
                       fill
+                      sizes="96px"
                       className="object-cover"
                     />
                   </div>
@@ -148,9 +152,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-section-warm py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
+      <section className={`bg-section-warm ${sectionY}`}>
+        <div className={container}>
+          <div className={`mx-auto max-w-2xl text-center ${sectionIntroMargin}`}>
             <SectionHeading
               eyebrow="Our Approach"
               title="What sets us apart"
@@ -158,7 +162,7 @@ export default function AboutPage() {
             />
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className={`grid ${gridGap} sm:grid-cols-2`}>
             {whyChooseUs.map((item) => (
               <div
                 key={item.title}

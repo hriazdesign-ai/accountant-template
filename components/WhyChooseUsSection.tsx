@@ -2,6 +2,7 @@ import ImagePlaceholder from "@/components/ImagePlaceholder";
 import SectionHeading from "@/components/SectionHeading";
 import { cardHoverClass } from "@/lib/card-styles";
 import { whyChooseUs } from "@/lib/content";
+import { container, gridGapLg, sectionYMedium } from "@/lib/layout";
 import { type SectionTone, sectionToneClasses } from "@/lib/section-tones";
 
 type WhyChooseUsSectionProps = {
@@ -10,8 +11,8 @@ type WhyChooseUsSectionProps = {
 
 export default function WhyChooseUsSection({ tone = "mint" }: WhyChooseUsSectionProps) {
   return (
-    <section className={`${sectionToneClasses[tone]} py-16 sm:py-20`}>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section className={`${sectionToneClasses[tone]} ${sectionYMedium}`}>
+      <div className={container}>
         <div>
           <ImagePlaceholder
             src="/images/accountant-office.jpg"
@@ -21,7 +22,7 @@ export default function WhyChooseUsSection({ tone = "mint" }: WhyChooseUsSection
           />
         </div>
 
-        <div className="mt-16 grid items-stretch gap-12 sm:mt-20 lg:mt-24 lg:grid-cols-2 lg:gap-16">
+        <div className={`mt-16 grid items-stretch ${gridGapLg} sm:mt-20 lg:mt-24 lg:grid-cols-2`}>
           <div className="flex h-full flex-col">
             <SectionHeading
               eyebrow="Why Choose Us"

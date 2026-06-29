@@ -4,6 +4,13 @@ import { IconArrowRight, ServiceIcon } from "@/components/icons";
 import { cardHoverClass } from "@/lib/card-styles";
 import { services } from "@/lib/content";
 import {
+  cardsToCta,
+  container,
+  gridGap,
+  sectionIntroMargin,
+  sectionY,
+} from "@/lib/layout";
+import {
   type SectionTone,
   sectionToneClasses,
   serviceIconStyles,
@@ -26,13 +33,13 @@ export default function ServicesGrid({
 
   const sectionPadding = compactBottom
     ? "pt-16 pb-12 sm:pt-24 sm:pb-16"
-    : "py-16 sm:py-24";
+    : sectionY;
 
   return (
     <section className={`${sectionToneClasses[tone]} ${sectionPadding}`}>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className={container}>
         {showHeading && (
-          <div className="mx-auto mb-12 flex max-w-2xl flex-col items-center text-center sm:mb-16">
+          <div className={`mx-auto flex max-w-2xl flex-col items-center text-center ${sectionIntroMargin}`}>
             <span className="mx-auto mb-4 block h-1 w-10 rounded-full bg-accent-text" />
             <SectionHeading
               showKeyline={false}
@@ -43,7 +50,7 @@ export default function ServicesGrid({
           </div>
         )}
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className={`grid items-stretch ${gridGap} sm:grid-cols-2 lg:grid-cols-3`}>
           {displayedServices.map((service) => {
             const iconStyle =
               serviceIconStyles[service.icon] ?? serviceIconStyles.document;
@@ -51,7 +58,7 @@ export default function ServicesGrid({
             return (
               <article
                 key={service.title}
-                className={`group relative overflow-hidden rounded-[8px] border border-primary/12 bg-section-white p-6 sm:p-8 ${cardHoverClass}`}
+                className={`group relative flex h-full flex-col overflow-hidden rounded-[8px] border border-primary/12 bg-section-white p-6 sm:p-8 ${cardHoverClass}`}
               >
                 <div className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-accent transition-transform duration-300 group-hover:scale-x-100" />
 
@@ -64,11 +71,11 @@ export default function ServicesGrid({
                 <h3 className="mt-6 font-serif text-xl font-medium text-primary">
                   {service.title}
                 </h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-text-muted">
+                <p className="mt-2.5 flex-1 text-sm leading-relaxed text-text-muted">
                   {service.description}
                 </p>
 
-                <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-accent-text opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <p className="mt-5 shrink-0 text-xs font-semibold uppercase tracking-wider text-accent-text opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   Learn more
                 </p>
               </article>
@@ -77,7 +84,7 @@ export default function ServicesGrid({
         </div>
 
         {showHeading && (
-          <div className="mt-12 text-center">
+          <div className={`${cardsToCta} text-center`}>
             <Link
               href="/services"
               className="inline-flex items-center gap-2 rounded-full border border-accent-text/25 bg-accent/10 px-5 py-2.5 text-sm font-semibold text-accent-text transition-colors hover:border-accent-text/40 hover:bg-accent/15"

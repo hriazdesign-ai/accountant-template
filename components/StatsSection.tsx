@@ -1,10 +1,11 @@
 import { stats } from "@/lib/content";
+import { container } from "@/lib/layout";
 
 export default function StatsSection() {
   return (
     <section className="relative border-y border-primary-light/20 bg-primary">
       <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(47,125,107,0.12)_0%,_transparent_35%,_transparent_65%,_rgba(47,125,107,0.12)_100%)]" />
-      <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+      <div className={`relative ${container} py-12`}>
         <ul className="grid grid-cols-2 gap-8 lg:grid-cols-4">
           {stats.map((stat) => (
             <li key={stat.label} className="text-center lg:text-left">

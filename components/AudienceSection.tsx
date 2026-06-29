@@ -1,6 +1,7 @@
 import SectionHeading from "@/components/SectionHeading";
 import { IconCheck } from "@/components/icons";
 import { audiences } from "@/lib/content";
+import { container, gridGap, sectionIntroMargin } from "@/lib/layout";
 import { type SectionTone, sectionToneClasses } from "@/lib/section-tones";
 
 type AudienceSectionProps = {
@@ -20,8 +21,8 @@ export default function AudienceSection({
 
   return (
     <section className={`${sectionToneClasses[tone]} ${sectionPadding}`}>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-12 flex max-w-2xl flex-col items-center text-center sm:mb-16 lg:mb-20">
+      <div className={container}>
+        <div className={`mx-auto flex max-w-2xl flex-col items-center text-center ${sectionIntroMargin} lg:mb-20`}>
           <SectionHeading
             eyebrow="Who We Help"
             title="Accounting built for how you work"
@@ -29,7 +30,7 @@ export default function AudienceSection({
           />
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
+        <div className={`grid ${gridGap} lg:grid-cols-3 lg:gap-8`}>
           {audiences.map((audience, index) => (
             <article
               key={audience.title}
@@ -41,7 +42,7 @@ export default function AudienceSection({
                     : "border-primary/12 bg-section-white shadow-sm hover:shadow-md hover:shadow-primary/8"
               }`}
             >
-              <span
+              <h3
                 className={`inline-block rounded-none px-3 py-1 text-xs font-semibold uppercase tracking-wider ${
                   index === 1
                     ? "bg-white/15 text-accent-on-dark"
@@ -49,7 +50,7 @@ export default function AudienceSection({
                 }`}
               >
                 {audience.title}
-              </span>
+              </h3>
               <p
                 className={`mt-4 text-sm leading-relaxed ${
                   index === 1 ? "text-white/90" : "text-text-muted"

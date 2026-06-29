@@ -1,16 +1,20 @@
 import Link from "next/link";
 import { IconLocation, IconMail, IconPhone } from "@/components/icons";
+import { container, footerBadgeRow } from "@/lib/layout";
 import { footerBadges, navLinks, siteConfig } from "@/lib/content";
+
+const linkFocus =
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-on-dark rounded-[4px]";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="border-t border-primary-light/30 bg-primary text-white">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="inline-block">
+      <div className={`${container} py-12 lg:py-16`}>
+        <div className="grid gap-10 lg:grid-cols-4">
+          <div>
+            <Link href="/" className={`inline-block ${linkFocus}`}>
               <span className="font-serif text-2xl font-medium">{siteConfig.name}</span>
               <span className="mt-1 block text-xs font-medium uppercase tracking-widest text-accent-on-dark">
                 {siteConfig.tagline}
@@ -21,69 +25,71 @@ export default function Footer() {
             </p>
           </div>
 
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-white/75">
-              Navigation
-            </h3>
-            <ul className="mt-4 space-y-2">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/90 transition-colors hover:text-white"
+          <div className="col-span-full grid grid-cols-3 gap-4 sm:gap-6 lg:contents">
+            <div>
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-white/75 sm:text-sm">
+                Navigation
+              </h3>
+              <ul className="mt-3 space-y-2 sm:mt-4">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className={`text-xs text-white/90 transition-colors hover:text-white sm:text-sm ${linkFocus}`}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-white/75 sm:text-sm">
+                Services
+              </h3>
+              <ul className="mt-3 space-y-2 text-xs text-white/90 sm:mt-4 sm:text-sm">
+                <li>Self Assessment</li>
+                <li>Bookkeeping</li>
+                <li>Payroll & VAT</li>
+                <li>Year-End Accounts</li>
+                <li>Tax Planning</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-white/75 sm:text-sm">
+                Contact
+              </h3>
+              <ul className="mt-3 space-y-2.5 sm:mt-4 sm:space-y-3">
+                <li>
+                  <a
+                    href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                    className={`flex items-start gap-1.5 text-xs text-white/90 transition-colors hover:text-white sm:gap-2 sm:text-sm ${linkFocus}`}
                   >
-                    {link.label}
-                  </Link>
+                    <IconPhone className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent-on-dark sm:h-4 sm:w-4" />
+                    {siteConfig.phone}
+                  </a>
                 </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-white/75">
-              Services
-            </h3>
-            <ul className="mt-4 space-y-2 text-sm text-white/90">
-              <li>Self Assessment</li>
-              <li>Bookkeeping</li>
-              <li>Payroll & VAT</li>
-              <li>Year-End Accounts</li>
-              <li>Tax Planning</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-white/75">
-              Contact
-            </h3>
-            <ul className="mt-4 space-y-3">
-              <li>
-                <a
-                  href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-                  className="flex items-start gap-2 text-sm text-white/90 transition-colors hover:text-white"
-                >
-                  <IconPhone className="mt-0.5 h-4 w-4 shrink-0 text-accent-on-dark" />
-                  {siteConfig.phone}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="flex items-start gap-2 text-sm text-white/90 transition-colors hover:text-white"
-                >
-                  <IconMail className="mt-0.5 h-4 w-4 shrink-0 text-accent-on-dark" />
-                  {siteConfig.email}
-                </a>
-              </li>
-              <li className="flex items-start gap-2 text-sm text-white/90">
-                <IconLocation className="mt-0.5 h-4 w-4 shrink-0 text-accent-on-dark" />
-                {siteConfig.address}
-              </li>
-            </ul>
+                <li>
+                  <a
+                    href={`mailto:${siteConfig.email}`}
+                    className={`flex items-start gap-1.5 text-xs text-white/90 transition-colors hover:text-white sm:gap-2 sm:text-sm ${linkFocus}`}
+                  >
+                    <IconMail className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent-on-dark sm:h-4 sm:w-4" />
+                    <span className="break-all">{siteConfig.email}</span>
+                  </a>
+                </li>
+                <li className="flex items-start gap-1.5 text-xs text-white/90 sm:gap-2 sm:text-sm">
+                  <IconLocation className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent-on-dark sm:h-4 sm:w-4" />
+                  {siteConfig.address}
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-2.5 border-t border-white/15 pt-8">
+        <div className={`mt-10 ${footerBadgeRow} border-t border-white/15 pt-8`}>
           {footerBadges.map((badge) => (
             <span
               key={badge}

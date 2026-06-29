@@ -6,12 +6,15 @@ import ServicesGrid from "@/components/ServicesGrid";
 import { IconCheck } from "@/components/icons";
 import { cardHoverClass } from "@/lib/card-styles";
 import { services } from "@/lib/content";
+import { container, divider, gridGap, sectionIntroMargin, sectionY } from "@/lib/layout";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Services",
   description:
     "Comprehensive accounting services including bookkeeping, payroll, VAT, self-assessment, year-end accounts, and tax planning.",
-};
+  path: "/services",
+});
 
 const processSteps = [
   {
@@ -60,9 +63,9 @@ export default function ServicesPage() {
 
       <ServicesGrid showHeading={false} tone="white" />
 
-      <section className="bg-section-warm py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
+      <section className={`bg-section-warm ${sectionY}`}>
+        <div className={container}>
+          <div className={`mx-auto max-w-2xl text-center ${sectionIntroMargin}`}>
             <SectionHeading
               eyebrow="What's Included"
               title="Every service, explained"
@@ -70,11 +73,11 @@ export default function ServicesPage() {
             />
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className={`grid items-stretch ${gridGap} lg:grid-cols-2`}>
             {services.map((service) => (
               <div
                 key={service.title}
-                className={`rounded-[8px] border border-primary/10 bg-white p-6 sm:p-8 ${cardHoverClass}`}
+                className={`flex h-full flex-col rounded-[8px] border border-primary/10 bg-white p-6 sm:p-8 ${cardHoverClass}`}
               >
                 <h3 className="font-serif text-xl font-medium text-text">
                   {service.title}
@@ -82,7 +85,7 @@ export default function ServicesPage() {
                 <p className="mt-2 text-sm leading-relaxed text-text-muted">
                   {service.description}
                 </p>
-                <ul className="mt-4 space-y-2">
+                <ul className="mt-4 flex-1 space-y-2">
                   {[
                     "Dedicated point of contact",
                     "HMRC & Companies House filing",
@@ -100,13 +103,13 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="border-t border-primary/10" />
+      <div className={container}>
+        <div className={divider} />
       </div>
 
-      <section className="bg-section-white py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
+      <section className={`bg-section-white ${sectionY}`}>
+        <div className={container}>
+          <div className={`mx-auto max-w-2xl text-center ${sectionIntroMargin}`}>
             <SectionHeading
               eyebrow="How It Works"
               title="Getting started is straightforward"
@@ -114,7 +117,7 @@ export default function ServicesPage() {
             />
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className={`grid ${gridGap} sm:grid-cols-2 lg:grid-cols-4`}>
             {processSteps.map((item, index) => (
               <div
                 key={item.step}
