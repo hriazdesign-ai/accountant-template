@@ -1,19 +1,126 @@
 export const siteConfig = {
   name: "Meridian & Co.",
-  tagline: "Chartered Accountants",
+  tagline: "Chartered Accountant · London",
   phone: "020 7946 0958",
-  email: "hello@meridianco.co.uk",
-  address: "42 Threadneedle Street, London EC2R 8AY",
+  email: "hello@meridianandco.co.uk",
+  address: "London, United Kingdom",
   hours: "Mon–Fri, 9:00am – 5:30pm",
 };
 
 export const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/contact", label: "Contact" },
+  { href: "/#services", label: "Services" },
+  { href: "/#about", label: "About" },
+  { href: "/#who-we-help", label: "Who We Help" },
+  { href: "/#contact", label: "Contact" },
 ];
+
+export const homeServices = [
+  {
+    number: "1",
+    title: "Self Assessment",
+    eyebrow: "Tax returns made straightforward.",
+    description:
+      "We prepare and submit your return accurately, helping you meet deadlines and understand what you owe.",
+  },
+  {
+    number: "2",
+    title: "Bookkeeping",
+    eyebrow: "Know exactly where you stand.",
+    description: "Clear, accurate records that give you an up-to-date view of your finances.",
+  },
+  {
+    number: "3",
+    title: "Payroll",
+    eyebrow: "Payroll without the administrative burden.",
+    description:
+      "Reliable payroll management that keeps your team paid correctly and your business compliant.",
+  },
+  {
+    number: "4",
+    title: "VAT",
+    eyebrow: "VAT handled properly.",
+    description: "Accurate VAT returns, clear advice and support with your ongoing obligations.",
+  },
+  {
+    number: "5",
+    title: "Year-End Accounts",
+    eyebrow: "Compliance with clarity.",
+    description: "Accurate annual accounts prepared efficiently, with your numbers explained clearly.",
+  },
+  {
+    number: "6",
+    title: "Tax Planning",
+    eyebrow: "Plan ahead. Pay what you should.",
+    description:
+      "Proactive tax planning that helps you make informed decisions and avoid unnecessary surprises.",
+  },
+];
+
+export const homeAudiences = [
+  {
+    number: "1",
+    title: "Individuals",
+    description: "Straightforward support with tax returns, income and personal financial obligations.",
+  },
+  {
+    number: "2",
+    title: "Sole Traders",
+    description: "Practical accounting support that gives you more time to focus on running your business.",
+  },
+  {
+    number: "3",
+    title: "Limited Companies",
+    description:
+      "Accounts, corporation tax and financial support to keep your company organised and compliant.",
+  },
+  {
+    number: "4",
+    title: "Growing Businesses",
+    description:
+      "Proactive advice and financial insight to support better decisions as your business grows.",
+  },
+];
+
+export const homeStats = [
+  { value: "15+", label: "Years' experience" },
+  { value: "850+", label: "Clients supported" },
+  { value: "98%", label: "Client retention" },
+  { value: "£2.4", suffix: "M", label: "Tax saved for clients" },
+];
+
+export const homeApproach = [
+  {
+    title: "Dedicated Accountant",
+    eyebrow: "One person who knows your business.",
+    description: "A consistent point of contact who understands your finances.",
+    icon: "/images/meridian/icons/customer.png",
+  },
+  {
+    title: "Fixed Fees",
+    eyebrow: "Know what you're paying.",
+    description: "Straightforward pricing with no unexpected bills.",
+    icon: "/images/meridian/icons/pound.png",
+  },
+  {
+    title: "Proactive Advice",
+    eyebrow: "Advice before you need it.",
+    description: "We identify opportunities and potential issues throughout the year.",
+    icon: "/images/meridian/icons/chart.png",
+  },
+  {
+    title: "Cloud-First",
+    eyebrow: "Your finances, wherever you are.",
+    description: "Modern accounting tools give you secure access to clearer financial information.",
+    icon: "/images/meridian/icons/cloud.png",
+  },
+];
+
+export const homeTestimonial = {
+  quote:
+    "Meridian gave us a much clearer picture of our finances. We spend less time worrying about the numbers and more time focusing on the business.",
+  name: "James Carter",
+  role: "Director, Carter & Co.",
+};
 
 export const stats = [
   { value: "15+", label: "Years of experience" },

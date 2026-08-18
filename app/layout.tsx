@@ -1,21 +1,25 @@
 import type { Metadata } from "next";
-import { DM_Sans, Source_Serif_4 } from "next/font/google";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import { IBM_Plex_Sans, IBM_Plex_Serif, Instrument_Serif } from "next/font/google";
 import { siteConfig } from "@/lib/content";
 import { createPageMetadata, defaultDescription, siteUrl } from "@/lib/seo";
 import "./globals.css";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: "400",
 });
 
-const sourceSerif = Source_Serif_4({
-  variable: "--font-source-serif",
+const ibmPlexSerif = IBM_Plex_Serif({
+  variable: "--font-ibm-serif",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600"],
+});
+
+const ibmPlexSans = IBM_Plex_Sans({
+  variable: "--font-ibm-sans",
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -35,12 +39,10 @@ export default function RootLayout({
   return (
     <html
       lang="en-GB"
-      className={`${dmSans.variable} ${sourceSerif.variable} h-full antialiased`}
+      className={`${instrumentSerif.variable} ${ibmPlexSerif.variable} ${ibmPlexSans.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col overflow-x-hidden bg-section-warm text-text">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <body className="min-h-full bg-paper text-ink">
+        {children}
       </body>
     </html>
   );

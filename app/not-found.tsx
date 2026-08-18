@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import { container, sectionY } from "@/lib/layout";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -12,6 +14,9 @@ export const metadata = {
 
 export default function NotFound() {
   return (
+    <div className="mx-auto flex min-h-full w-[1450px] flex-col">
+      <Header />
+      <main className="flex-1">
     <section className={`bg-section-white ${sectionY}`}>
       <div className={`${container} flex flex-col items-center text-center`}>
         <span className="mb-4 block h-1 w-10 rounded-none bg-accent-text" />
@@ -30,5 +35,8 @@ export default function NotFound() {
         </Link>
       </div>
     </section>
+      </main>
+      <Footer />
+    </div>
   );
 }
