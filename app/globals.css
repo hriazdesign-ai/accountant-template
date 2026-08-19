@@ -32,10 +32,19 @@
   --site-header-height: 100px;
 
   /* Homepage content grid — 12 columns, 16px gutters, 1600px max, 30px side inset */
-  --meridian-pad: 30px;
+  --meridian-pad: 20px;
   --meridian-content: 1600px;
   --meridian-gutter: 16px;
-  --meridian-columns: 12;
+  --meridian-columns: 1;
+  --site-header-height: 80px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --meridian-pad: 30px;
+    --meridian-columns: 12;
+    --site-header-height: 100px;
+  }
 }
 
 @theme inline {
@@ -65,12 +74,14 @@
 
 html {
   min-width: 0;
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-ibm-sans), system-ui, sans-serif;
+  overflow-x: clip;
 }
 
 .meridian-container {
@@ -84,9 +95,43 @@ body {
   display: grid;
   grid-template-columns: repeat(var(--meridian-columns), minmax(0, 1fr));
   column-gap: var(--meridian-gutter);
-  width: calc(100% - 60px);
+  width: calc(100% - var(--meridian-pad) * 2);
   max-width: var(--meridian-content);
   margin-inline: auto;
+}
+
+/*
+  Editorial image bleed: a decorative black strip attached to the
+  OUTER edge of the photograph extending to the viewport edge.
+  The photograph itself is untouched — same grid columns, same
+  object-cover, same dimensions.
+*/
+.meridian-editorial-image {
+  position: relative;
+}
+
+.meridian-editorial-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  pointer-events: none;
+  background: #0d0c0b;
+}
+
+.meridian-editorial-image--right::after {
+  left: 100%;
+}
+
+.meridian-editorial-image--left::after {
+  right: 100%;
+}
+
+@media (max-width: 767px) {
+  .meridian-editorial-image::after {
+    display: none;
+  }
 }
 
 .site-header {
@@ -114,87 +159,34 @@ body {
   pointer-events: none;
 }
 
-.cta-button--arrow {
-  gap: 0;
-  width: fit-content;
-  white-space: nowrap;
+.cta-button {
+  background-color: #0d0c0b;
+  color: #ffffff;
+  transition: background-color 200ms ease;
 }
 
-.cta-button__label {
-  flex-shrink: 0;
+.cta-button:hover,
+.cta-button:focus-visible {
+  background-color: #2a2927;
 }
 
-.cta-button__arrow-wrap {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 0;
-  margin-left: 0;
-  overflow: hidden;
-  transition:
-    width var(--motion-cta-pill-duration) var(--motion-cta-pill-ease),
-    margin-left var(--motion-cta-pill-duration) var(--motion-cta-pill-ease);
+.site-nav-link {
+  color: inherit;
+  transition: color 180ms ease;
 }
 
-.cta-button__arrow {
-  display: inline-block;
-  flex-shrink: 0;
-  opacity: 0;
-  transform: translateX(-4px);
-  transition:
-    opacity 0.24s var(--motion-cta-pill-ease),
-    transform 0.24s var(--motion-cta-pill-ease);
+.site-nav-link:hover,
+.site-nav-link:focus-visible {
+  color: #7a7874;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .cta-button--arrow:hover .cta-button__arrow-wrap,
-  .cta-button--arrow:focus-visible .cta-button__arrow-wrap {
-    width: 18px;
-    margin-left: 8px;
-  }
-
-  .cta-button--arrow:hover .cta-button__arrow,
-  .cta-button--arrow:focus-visible .cta-button__arrow {
-    opacity: 1;
-    transform: translateX(0);
-    transition:
-      opacity 0.45s var(--motion-cta-pill-ease),
-      transform 0.45s var(--motion-cta-pill-ease);
-  }
-}
-
-.cta-button--arrow:focus-within .cta-button__arrow-wrap {
-  width: 18px;
-  margin-left: 8px;
-}
-
-.cta-button--arrow:focus-within .cta-button__arrow {
-  opacity: 1;
-  transform: translateX(0);
+main section[id] {
+  scroll-margin-top: calc(var(--site-header-height) + 16px);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .site-header {
-    transition: none;
-  }
-
-  .cta-button__arrow-wrap,
-  .cta-button__arrow {
-    transition: none;
-  }
-
-  .cta-button--arrow:hover .cta-button__arrow-wrap,
-  .cta-button--arrow:focus-visible .cta-button__arrow-wrap,
-  .cta-button--arrow:focus-within .cta-button__arrow-wrap {
-    width: 18px;
-    margin-left: 8px;
-  }
-
-  .cta-button--arrow:hover .cta-button__arrow,
-  .cta-button--arrow:focus-visible .cta-button__arrow,
-  .cta-button--arrow:focus-within .cta-button__arrow {
-    opacity: 1;
-    transform: translateX(0);
+  html {
+    scroll-behavior: auto;
   }
 }
 

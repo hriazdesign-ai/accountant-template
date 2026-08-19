@@ -6,7 +6,38 @@ import { navLinks, siteConfig } from "@/lib/content";
 export default function Footer() {
   return (
     <footer className="w-full border-t border-[rgba(13,12,11,0.2)] bg-paper">
-      <MeridianGrid className="py-[80px]">
+      {/* Mobile */}
+      <div className="flex flex-col gap-10 px-5 py-10 md:hidden">
+        <div className="flex flex-col gap-10">
+          <Logo />
+          <div className="flex gap-2">
+            <div className="w-[121px] shrink-0">
+              <div className="flex flex-col gap-[30px]">
+                <p className="font-serif text-sm leading-5 text-ink">NAVIGATION</p>
+                <ul className="flex w-full flex-col gap-2">
+                  {navLinks.map((link) => (
+                    <li key={link.href}>
+                      <a href={link.href} className="block font-sans text-sm leading-5 text-ink">
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="flex min-w-0 flex-1 flex-col gap-[30px]">
+              <p className="font-serif text-base leading-[22px] text-ink">CONTACT</p>
+              <ContactRow variant="footer" />
+            </div>
+          </div>
+        </div>
+        <p className="font-sans text-xs font-normal leading-[22px] text-ink">
+          © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+        </p>
+      </div>
+
+      {/* Desktop */}
+      <MeridianGrid className="hidden py-[80px] md:block">
         <div className="col-span-12 grid grid-cols-12 gap-x-4 pb-[80px]">
           <div className="col-span-3 flex flex-col items-start justify-center gap-[30px]">
             <Logo />

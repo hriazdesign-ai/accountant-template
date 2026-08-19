@@ -24,7 +24,7 @@ export default function EyebrowTag({
 
   return (
     <span
-      className={`inline-flex items-center justify-center rounded-[52px] border border-solid px-[18px] py-3 font-serif text-[12px] uppercase leading-3 tracking-[0.24px] ${borderClass} ${textClass}`}
+      className={`inline-flex w-fit items-center justify-center self-start rounded-[52px] border border-solid px-[18px] py-3 font-serif text-[12px] uppercase leading-3 tracking-[0.24px] ${borderClass} ${textClass}`}
     >
       {children}
     </span>

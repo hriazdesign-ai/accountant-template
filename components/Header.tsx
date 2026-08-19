@@ -16,12 +16,14 @@ export default function Header() {
           {navLinks.map((link, index) => (
             <span key={link.href} className="flex items-center gap-3">
               {index > 0 ? <span className="text-sm leading-[14px]">•</span> : null}
-              <a href={link.href}>{link.label}</a>
+              <a href={link.href} className="site-nav-link">
+                {link.label}
+              </a>
             </span>
           ))}
         </nav>
         <Button href="/contact" size="header">
-          Speak to an accountant ↗
+          Speak to an accountant
         </Button>
       </div>
     </header>

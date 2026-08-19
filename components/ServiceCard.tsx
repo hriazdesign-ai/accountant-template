@@ -14,7 +14,7 @@ export default function ServiceCard({
   description,
 }: ServiceCardProps) {
   return (
-    <article className="flex h-full min-w-px w-full flex-col bg-[#1b1917] p-10">
+    <article className="flex h-full min-w-px w-full flex-col bg-[#1b1917] p-6 md:p-10">
       <div className="flex w-full flex-col gap-6">
         <div className="relative size-10 overflow-hidden rounded-full bg-black">
           <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[18px] leading-[26.5px] tracking-[-0.36px] text-white">
@@ -43,7 +43,7 @@ type AudienceCardProps = {
 
 export function AudienceCard({ number, title, description }: AudienceCardProps) {
   return (
-    <article className="flex h-full min-w-px w-full flex-col bg-white p-10">
+    <article className="flex h-full min-w-px w-full flex-col bg-white p-5 md:p-10">
       <div className="flex w-full flex-col gap-6">
         <div className="relative size-10 overflow-hidden rounded-full bg-paper">
           <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[18px] leading-[26.5px] tracking-[-0.36px] text-ink">
@@ -88,7 +88,7 @@ type ApproachCardProps = {
 
 export function ApproachCard({ title, eyebrow, description, icon }: ApproachCardProps) {
   return (
-    <article className="flex h-full min-w-px w-full flex-col bg-[#1b1917] p-10">
+    <article className="flex h-full min-w-px w-full flex-col bg-[#1b1917] p-5 md:p-10">
       <div className="flex w-full flex-col gap-6">
         <div className="relative size-10 overflow-hidden rounded-full bg-paper">
           <Image
