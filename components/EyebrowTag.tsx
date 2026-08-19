@@ -16,9 +16,9 @@ export default function EyebrowTag({
     border === "ink-40"
       ? "border-[rgba(13,12,11,0.4)]"
       : border === "white-40"
-        ? "border-white/40"
+        ? "border-[#6E6D6D]"
         : isDark
-          ? "border-white/40"
+          ? "border-[#6E6D6D]"
           : "border-[rgba(13,12,11,0.2)]";
   const textClass = isDark ? "text-white" : ink === "ink-warm" ? "text-ink-warm" : "text-ink";
 

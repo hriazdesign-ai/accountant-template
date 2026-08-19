@@ -75,13 +75,13 @@
 html {
   min-width: 0;
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-ibm-sans), system-ui, sans-serif;
-  overflow-x: clip;
 }
 
 .meridian-container {
@@ -165,11 +165,6 @@ body {
   transition: background-color 200ms ease;
 }
 
-.cta-button:hover,
-.cta-button:focus-visible {
-  background-color: #2a2927;
-}
-
 .site-nav-link {
   color: inherit;
   transition: color 180ms ease;
@@ -184,7 +179,29 @@ main section[id] {
   scroll-margin-top: calc(var(--site-header-height) + 16px);
 }
 
+/*
+  Stacked-section system: sections pin beneath the header and later
+  sections scroll over earlier ones. Desktop-only, pure CSS sticky.
+*/
+@media (min-width: 768px) {
+  .stacked-section {
+    position: sticky;
+    top: 0;
+    z-index: calc(var(--stack-order, 0));
+  }
+
+  .stacked-group > :not(.stacked-section) {
+    position: relative;
+    z-index: 10;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .stacked-section {
+    position: static !important;
+    z-index: auto !important;
+  }
+
   html {
     scroll-behavior: auto;
   }
@@ -202,4 +219,40 @@ a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 2px;
+}
+
+/* Desktop image parallax — oversized inner wrapper */
+.parallax-image-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  will-change: transform;
+}
+
+/* Content reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal--card {
+  transform: translateY(32px);
+  transition-duration: 0.8s;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

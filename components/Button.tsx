@@ -16,9 +16,10 @@ export default function Button({ href, children, size = "body", fullWidth = fals
   return (
     <Link
       href={href}
-      className={`cta-button inline-flex items-center justify-center rounded-[8px] bg-ink font-serif text-base font-medium text-white ${sizeClass} ${fullWidth ? "w-full" : ""}`}
+      className={`cta-button group inline-flex items-center justify-center gap-2 rounded-[8px] bg-ink font-serif text-base font-medium text-white ${sizeClass} ${fullWidth ? "w-full" : ""}`}
     >
       {children}
+      <span className="inline-block transition-transform duration-200 ease-out md:group-hover:translate-x-1">→</span>
     </Link>
   );
 }

@@ -1,5 +1,6 @@
 import EyebrowTag from "@/components/EyebrowTag";
 import MeridianGrid from "@/components/MeridianGrid";
+import Reveal from "@/components/Reveal";
 import { Stat } from "@/components/ServiceCard";
 import SectionIntro from "@/components/SectionIntro";
 import { homeStats } from "@/lib/content";
@@ -10,14 +11,20 @@ export default function HomeResults() {
       {/* Mobile */}
       <div className="px-5 py-10 md:hidden">
         <div className="flex flex-col gap-6 pb-10">
-          <EyebrowTag tone="dark" border="white-40">OUR RESULTS</EyebrowTag>
-          <h2 className="font-display text-[36px] leading-[42px] tracking-[-0.36px] text-white">
-            Experience you can measure.
-          </h2>
+          <Reveal>
+            <EyebrowTag tone="dark" border="white-40">OUR RESULTS</EyebrowTag>
+          </Reveal>
+          <Reveal delay={80}>
+            <h2 className="font-display text-[36px] leading-[42px] tracking-[-0.36px] text-white">
+              Experience you can measure.
+            </h2>
+          </Reveal>
         </div>
         <div className="flex flex-col gap-10">
-          {homeStats.map((stat) => (
-            <Stat key={stat.label} {...stat} />
+          {homeStats.map((stat, i) => (
+            <Reveal key={stat.label} delay={160 + i * 80} variant="card">
+              <Stat {...stat} />
+            </Reveal>
           ))}
         </div>
       </div>
@@ -32,10 +39,10 @@ export default function HomeResults() {
           title="Experience you can measure."
         />
         <div className="col-span-12 grid grid-cols-12 gap-x-4">
-          {homeStats.map((stat) => (
-            <div key={stat.label} className="col-span-3 min-w-0">
+          {homeStats.map((stat, i) => (
+            <Reveal key={stat.label} delay={i * 80} variant="card" className="col-span-3 min-w-0">
               <Stat {...stat} />
-            </div>
+            </Reveal>
           ))}
         </div>
       </MeridianGrid>
