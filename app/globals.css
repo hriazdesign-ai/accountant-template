@@ -335,7 +335,8 @@ main section[id] {
 @media (min-width: 768px) {
   .stacked-section {
     position: sticky;
-    top: 0;
+    top: var(--stack-top, 0px);
+    margin-bottom: var(--stack-extra, 0px);
     z-index: calc(var(--stack-order, 0));
   }
 

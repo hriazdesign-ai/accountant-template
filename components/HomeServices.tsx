@@ -37,7 +37,7 @@ export default function HomeServices() {
       </div>
 
       {/* Desktop */}
-      <MeridianGrid className="hidden py-[90px] md:block">
+      <MeridianGrid className="hidden pt-[90px] pb-[90px] md:block">
         <SectionIntro
           tone="dark"
           eyebrow="services"
