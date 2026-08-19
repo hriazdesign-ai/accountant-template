@@ -33,7 +33,7 @@
 
   /* Homepage content grid — 12 columns, 16px gutters, 1600px max, 30px side inset */
   --meridian-pad: 20px;
-  --meridian-content: 1600px;
+  --meridian-content: 1440px;
   --meridian-gutter: 16px;
   --meridian-columns: 1;
   --site-header-height: 80px;
